@@ -11,7 +11,7 @@ import "aos/dist/aos.css";
 import Index from "./pages/Home/@Index";
 import Checkout from "./pages/Checkout/@Index";
 import BoxStar2 from "./pages/BoxStar 2 Lugares/@Index";
-import Authorized from "./pages/authorized/@Index";
+import Authorized from "./pages/Authorized/@Index";
 import Pending from "./pages/pending/@Index";
 import Negada from "./pages/negada/@Index";
 
