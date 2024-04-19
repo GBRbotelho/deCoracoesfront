@@ -145,7 +145,7 @@ export default function Section7Perguntas() {
                       </p>
                     </div>
                   </div>
-                  <Link to={"/checkout"}>
+                  <Link to={"/checkout/boxpremium4"}>
                     <button>Escolha essa box</button>
                   </Link>
                 </div>
