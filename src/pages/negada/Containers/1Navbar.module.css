@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  padding: calc(10px * var(--factor)) 0;
+  align-items: center;
+  font-family: var(--font1);
+}
+
+.logo {
+  position: relative;
+  color: var(--color2);
+  display: flex;
+  align-items: center;
+  left: calc(100px * var(--factor));
+}
+
+.logo h1 {
+  font-size: calc(44px * var(--factor));
+}
+
+.button {
+  position: relative;
+  right: calc(20px * var(--factor));
+}
+
+.button button {
+  font-family: var(--font1);
+  color: var(--color1);
+  background-color: var(--color2);
+  border-radius: calc(9px * var(--factor));
+  font-size: calc(38px * var(--factor));
+  padding: calc(3px * var(--factor)) calc(30px * var(--factor));
+  transition: 0.2s;
+}
+
+.button button:hover {
+  transform: scale(1.1);
+  background-color: var(--color1);
+  color: var(--color2);
+  cursor: pointer;
+}

@@ -1,0 +1,340 @@
+html {
+  --color1: #ffffff;
+  --color2: #cf2815;
+  --color3: #342313;
+  --color4: #fff7f7;
+  --factor: 1;
+  --font1: "Poppins", sans-serif;
+}
+
+#form-checkout {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.container {
+  height: 18px;
+  display: inline-block;
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 2px;
+  padding: 1px 2px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font1);
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
+}
+
+body a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+body ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body button {
+  padding: 0;
+  border: 0;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+h2,
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+@media (max-width: 1900px) {
+  html {
+    --factor: 0.99;
+  }
+}
+
+@media (max-width: 1880px) {
+  html {
+    --factor: 0.98;
+  }
+}
+
+@media (max-width: 1860) {
+  html {
+    --factor: 0.97;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+    --factor: 0.96;
+  }
+}
+
+@media (max-width: 1824px) {
+  html {
+    --factor: 0.95;
+  }
+}
+
+@media (max-width: 1805px) {
+  html {
+    --factor: 0.94;
+  }
+}
+
+@media (max-width: 1785px) {
+  html {
+    --factor: 0.93;
+  }
+}
+
+@media (max-width: 1766px) {
+  html {
+    --factor: 0.92;
+  }
+}
+
+@media (max-width: 1747px) {
+  html {
+    --factor: 0.91;
+  }
+}
+
+@media (max-width: 1728px) {
+  html {
+    --factor: 0.9;
+  }
+}
+
+@media (max-width: 1709px) {
+  html {
+    --factor: 0.89;
+  }
+}
+
+@media (max-width: 1690px) {
+  html {
+    --factor: 0.88;
+  }
+}
+
+@media (max-width: 1670px) {
+  html {
+    --factor: 0.87;
+  }
+}
+
+@media (max-width: 1650px) {
+  html {
+    --factor: 0.86;
+  }
+}
+
+@media (max-width: 1630px) {
+  html {
+    --factor: 0.85;
+  }
+}
+
+@media (max-width: 1612px) {
+  html {
+    --factor: 0.84;
+  }
+}
+
+@media (max-width: 1594px) {
+  html {
+    --factor: 0.83;
+  }
+}
+
+@media (max-width: 1574px) {
+  html {
+    --factor: 0.82;
+  }
+}
+
+@media (max-width: 1555px) {
+  html {
+    --factor: 0.81;
+  }
+}
+
+@media (max-width: 1536px) {
+  html {
+    --factor: 0.8;
+  }
+}
+
+@media (max-width: 1517px) {
+  html {
+    --factor: 0.79;
+  }
+}
+
+@media (max-width: 1498px) {
+  html {
+    --factor: 0.78;
+  }
+}
+
+@media (max-width: 1478px) {
+  html {
+    --factor: 0.77;
+  }
+}
+
+@media (max-width: 1459px) {
+  html {
+    --factor: 0.76;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+    --factor: 0.75;
+  }
+}
+
+@media (max-width: 1420px) {
+  html {
+    --factor: 0.74;
+  }
+}
+
+@media (max-width: 1400px) {
+  html {
+    --factor: 0.73;
+  }
+}
+
+@media (max-width: 1380px) {
+  html {
+    --factor: 0.72;
+  }
+}
+
+@media (max-width: 1363px) {
+  html {
+    --factor: 0.71;
+  }
+}
+
+@media (max-width: 1344px) {
+  html {
+    --factor: 0.7;
+  }
+}
+
+@media (max-width: 1324px) {
+  html {
+    --factor: 0.69;
+  }
+}
+
+@media (max-width: 1305px) {
+  html {
+    --factor: 0.68;
+  }
+}
+
+@media (max-width: 1286px) {
+  html {
+    --factor: 0.67;
+  }
+}
+
+@media (max-width: 1267px) {
+  html {
+    --factor: 0.66;
+  }
+}
+
+@media (max-width: 1248px) {
+  html {
+    --factor: 0.65;
+  }
+}
+
+@media (max-width: 1228px) {
+  html {
+    --factor: 0.64;
+  }
+}
+
+@media (max-width: 1209px) {
+  html {
+    --factor: 0.63;
+  }
+}
+
+@media (max-width: 1190px) {
+  html {
+    --factor: 0.62;
+  }
+}
+
+@media (max-width: 1171px) {
+  html {
+    --factor: 0.61;
+  }
+}
+
+@media (max-width: 1152px) {
+  html {
+    --factor: 0.6;
+  }
+}
+
+@media (max-width: 1132px) {
+  html {
+    --factor: 0.59;
+  }
+}
+
+@media (max-width: 1113px) {
+  html {
+    --factor: 0.58;
+  }
+}
+
+@media (max-width: 1094px) {
+  html {
+    --factor: 0.57;
+  }
+}
+
+@media (max-width: 1075px) {
+  html {
+    --factor: 0.56;
+  }
+}
+
+@media (max-width: 1056px) {
+  html {
+    --factor: 0.55;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    --factor: 0.6;
+  }
+}

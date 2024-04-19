@@ -1,0 +1,135 @@
+.section {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font1);
+  background-color: var(--color4);
+}
+
+.container {
+  margin: calc(100px * var(--factor)) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: calc(60px * var(--factor));
+  font-weight: 600;
+  color: var(--color3);
+}
+
+.div1 {
+  display: flex;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.div2 .subtitle {
+  flex-direction: row-reverse;
+}
+
+.div2 .subtitle h2 {
+  text-align: right;
+}
+
+.image img {
+  width: calc(600px * var(--factor));
+}
+
+.subtitle {
+  background-color: var(--color2);
+  display: flex;
+  width: calc(900px * var(--factor));
+  align-items: center;
+}
+
+.subtitle span {
+  font-size: calc(60px * var(--factor));
+  color: var(--color1);
+  font-weight: 800;
+  padding: 0 calc(20px * var(--factor));
+}
+
+.subtitle h2 {
+  padding: calc(20px * var(--factor)) 0;
+  color: var(--color3);
+  font-size: calc(60px * var(--factor));
+  line-height: 0.8;
+}
+
+.text {
+  margin: calc(30px * var(--factor)) calc(50px * var(--factor));
+  width: calc(700px * var(--factor));
+}
+
+.text p {
+  font-size: calc(35px * var(--factor));
+  color: var(--color3);
+  font-weight: 300;
+}
+
+.foterContainer {
+  margin-top: calc(30px * var(--factor));
+}
+
+.foterContainer p {
+  width: calc(1400px * var(--factor));
+  font-size: calc(20px * var(--factor));
+  text-align: center;
+  color: var(--color3);
+  font-weight: 300;
+}
+
+@media (max-width: 1000px) {
+  .div1,
+  .div2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .div2 .subtitle {
+    flex-direction: row;
+  }
+
+  .div2 .subtitle h2 {
+    text-align: left;
+  }
+
+  .foterContainer p {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 520px) {
+  .title h1 {
+    font-size: calc(60px * var(--factor));
+    width: auto;
+    font-weight: 600;
+    color: var(--color3);
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 99vw;
+  }
+
+  .subtitle {
+    width: 90vw;
+  }
+
+  .text {
+    width: 90vw;
+  }
+
+  .image img {
+    width: 90vw;
+    height: 50vw;
+  }
+}

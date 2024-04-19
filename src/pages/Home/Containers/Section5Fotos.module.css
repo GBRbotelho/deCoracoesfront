@@ -1,0 +1,33 @@
+.section {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font1);
+  background-color: var(--color4);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: calc(60px * var(--factor));
+  width: calc(600px * var(--factor));
+  font-weight: 700;
+  color: var(--color3);
+}
+
+.image img {
+  width: 100vw;
+  height: 35vw;
+}
+
+@media (max-width: 1000px) {
+  .section{
+    display: none;
+  }
+}
+

@@ -1,0 +1,78 @@
+.section {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font1);
+  background-color: var(--color4);
+}
+
+.container {
+  border: calc(8px * var(--factor)) solid var(--color2);
+  display: flex;
+  gap: calc(30px * var(--factor));
+  width: 100vw;
+}
+
+.image {
+  min-width: calc(600px * var(--factor));
+  width: calc(600px * var(--factor));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20px * var(--factor));
+}
+
+.content h1 {
+  font-size: calc(60px * var(--factor));
+  width: calc(600px * var(--factor));
+  font-weight: 600;
+  color: var(--color3);
+}
+
+.content p {
+  color: var(--color3);
+  font-size: calc(34px * var(--factor));
+  width: calc(1140px * var(--factor));
+  font-weight: 300;
+}
+
+.button button {
+  font-family: var(--font1);
+  color: var(--color1);
+  background-color: var(--color2);
+  font-size: calc(38px * var(--factor));
+  padding: calc(3px * var(--factor)) calc(35px * var(--factor));
+  transition: 0.2s;
+}
+
+@media (max-width: 1000px) {
+  .content p {
+    width: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    justify-content: center;
+  }
+  .container {
+    padding: 10vw 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content p,
+  .content h1 {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .image {
+    min-width: 80vw;
+    width: 80vw;
+    height: 90vw;
+  }
+}

@@ -1,0 +1,103 @@
+.section {
+  display: flex;
+  width: 100vw;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #fff7f7;
+}
+
+.content {
+  display: flex;
+  gap: calc(200px * var(--factor));
+  margin-bottom: calc(100px * var(--factor));
+  height: min-content;
+  background-color: #fff7f7;
+}
+
+.status h1 {
+  text-align: center;
+  color: orange;
+}
+
+.titleForm h1 {
+  font-weight: 600;
+}
+
+.pedido {
+  background-color: var(--color1);
+  padding: calc(40px * var(--factor)) calc(40px * var(--factor));
+  border-radius: calc(16px * var(--factor));
+  display: flex;
+  flex-direction: column;
+  gap: calc(50px * var(--factor));
+  height: min-content;
+}
+
+.title {
+  border-bottom: calc(8px * var(--factor)) solid orange;
+  border-radius: calc(2px * var(--factor));
+}
+
+.box {
+  display: flex;
+  gap: calc(20px * var(--factor));
+  padding-bottom: calc(30px * var(--factor));
+  border-bottom: calc(8px * var(--factor)) solid var(--color2);
+  border-radius: calc(2px * var(--factor));
+}
+
+.dataBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.image {
+  background-color: var(--color3);
+  width: calc(200px * var(--factor));
+  height: calc(200px * var(--factor));
+  border-radius: calc(16px * var(--factor));
+}
+
+.dataPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 1040px) {
+  .content {
+    gap: calc(100px * var(--factor));
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 500px) {
+  .cardMP {
+    width: 90vw;
+  }
+
+  .formData form {
+    width: 90vw;
+  }
+
+  .line {
+    flex-direction: column;
+    gap: calc(0px * var(--factor));
+  }
+
+  .image {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
