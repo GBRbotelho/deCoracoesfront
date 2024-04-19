@@ -28,7 +28,7 @@ export default function Section7Perguntas() {
   }, []);
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="planos">
       <h1 className={styles.title}>Planos</h1>
       <div className={styles.container}>
         <div className={styles.content}>

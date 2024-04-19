@@ -7,6 +7,14 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setDropdownOpen(false); // Fechar o dropdown após clicar em um item
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -18,7 +26,7 @@ export default function Navbar() {
             <li>home</li>
           </Link>
           {/* <li>kit avulsos</li> */}
-          <li>planos</li>
+          <li onClick={() => scrollToSection("planos")}>planos</li>
         </ul>
       </nav>
       <div className={styles.button}>

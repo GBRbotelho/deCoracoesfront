@@ -3,6 +3,13 @@ import styles from "./Section3.module.css";
 import img from "../../../assets/imgs/Home/section3.webp";
 
 export default function Section3() {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -20,7 +27,7 @@ export default function Section3() {
             podem transformar instantes em lembranças inesquecíveis
           </p>
           <div className={styles.button}>
-            <button>eu quero</button>
+            <button onClick={() => scrollToSection("planos")}>eu quero</button>
           </div>
         </div>
       </div>

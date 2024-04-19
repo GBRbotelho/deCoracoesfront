@@ -71,7 +71,7 @@ export default function Section4Funcionamento() {
         </div>
         <div className={styles.foterContainer}>
           <p>
-            Prontinho, sua assinatura já está feita e no dia 15 de cada mês sua
+            Prontinho, sua assinatura já está feita e no dia 20 de cada mês sua
             box será enviada. Agora é só aguardar e aproveitar toda a nossa
             experiência! E ah, o nosso plano é livre de fidelidade, tá? Você
             fica quanto tempo desejar!
