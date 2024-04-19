@@ -20,28 +20,6 @@ export default function Section2() {
     cep: "",
   });
 
-  const obj = {
-    dataUser: {
-      firstName: "Gabriel",
-      lastName: "Botelho",
-      areaCode: "19",
-      number: "996855849",
-      streetName: "Rua Guara",
-      streetNumber: 8,
-      city: { name: "Campinas" },
-      zipCode: "13053-341",
-    },
-    token: "4ca5c8d78a6f75f7ef170c7451f4fd8b",
-    issuer_id: "24",
-    payment_method_id: "master",
-    transaction_amount: 5,
-    installments: 1,
-    payer: {
-      email: "gabrielbbotelho05@gmail.com",
-      identification: { type: "CPF", number: "12345678909" },
-    },
-  };
-
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
 
@@ -208,21 +186,21 @@ export default function Section2() {
           <div className={styles.box}>
             <div className={styles.image}></div>
             <div className={styles.dataBox}>
-              <p>Box Star</p>
-              <p>2 Lugares</p>
+              <p>Box Premium</p>
+              <p>6 Lugares</p>
             </div>
           </div>
           <div className={styles.price}>
             <div className={styles.dataPrice}>
               <p>Subtotal:</p>
-              <p>45,90</p>
+              <p>249,90</p>
             </div>
             <div className={styles.dataPrice}>
               <p>
                 <strong>Total:</strong>
               </p>
               <p>
-                <strong>45,90</strong>
+                <strong>249,90</strong>
               </p>
             </div>
           </div>

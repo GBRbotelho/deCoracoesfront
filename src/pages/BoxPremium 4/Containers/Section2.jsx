@@ -218,14 +218,6 @@ export default function Section2() {
               <p>179,90</p>
             </div>
             <div className={styles.dataPrice}>
-              <p>Entrega:</p>
-              <p>0,0</p>
-            </div>
-            <div className={styles.dataPrice}>
-              <p>Descontos:</p>
-              <p>0,0</p>
-            </div>
-            <div className={styles.dataPrice}>
               <p>
                 <strong>Total:</strong>
               </p>

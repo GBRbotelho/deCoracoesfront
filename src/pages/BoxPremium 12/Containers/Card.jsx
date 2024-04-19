@@ -8,7 +8,7 @@ export default function Card({ state }) {
   const navigate = useNavigate();
   initMercadoPago("APP_USR-2288d17f-56db-4bfb-9a37-996543d0eb51");
   const initialization = {
-    amount: 45.9,
+    amount: 455.9,
   };
 
   const customization = {
@@ -31,7 +31,7 @@ export default function Card({ state }) {
     try {
       // Defina a URL para a rota de criação de assinatura em seu servidor back-end
       const url =
-        "https://decoracoesapi.vercel.app/mp/create-subscription-star2";
+        "https://decoracoesapi.vercel.app/mp/create-subscription-premium12";
 
       // Envie uma solicitação POST com os dados do formulário do cartão de crédito
       const response = await fetch(url, {

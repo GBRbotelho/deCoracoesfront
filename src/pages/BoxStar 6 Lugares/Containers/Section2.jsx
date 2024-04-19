@@ -209,20 +209,20 @@ export default function Section2() {
             <div className={styles.image}></div>
             <div className={styles.dataBox}>
               <p>Box Star</p>
-              <p>2 Lugares</p>
+              <p>6 Lugares</p>
             </div>
           </div>
           <div className={styles.price}>
             <div className={styles.dataPrice}>
               <p>Subtotal:</p>
-              <p>45,90</p>
+              <p>89,90</p>
             </div>
             <div className={styles.dataPrice}>
               <p>
                 <strong>Total:</strong>
               </p>
               <p>
-                <strong>45,90</strong>
+                <strong>89,90</strong>
               </p>
             </div>
           </div>

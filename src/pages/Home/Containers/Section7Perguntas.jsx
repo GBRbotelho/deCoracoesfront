@@ -106,6 +106,165 @@ export default function Section7Perguntas() {
                   </Link>
                 </div>
               </SwiperSlide>
+
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Star</h1>
+                      </div>
+                      <img src={img1} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />4 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <br />
+                      <br />
+                      <br />
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 67,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxstar4"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Star</h1>
+                      </div>
+                      <img src={img1} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />6 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <br />
+                      <br />
+                      <br />
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 89,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxstar6"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Star</h1>
+                      </div>
+                      <img src={img1} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />8 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <br />
+                      <br />
+                      <br />
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 109,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxstar8"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Star</h1>
+                      </div>
+                      <img src={img1} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />
+                        12 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <br />
+                      <br />
+                      <br />
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 159,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxstar12"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
               <SwiperSlide className={styles.swiperCard}>
                 <div className={styles.card}>
                   <div className={styles.dataCard}>
@@ -146,6 +305,139 @@ export default function Section7Perguntas() {
                     </div>
                   </div>
                   <Link to={"/checkout/boxpremium4"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Premium</h1>
+                      </div>
+                      <img src={img2} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />6 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        lugar americano
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <li>
+                        <Ok />
+                        brinde surpresa
+                      </li>
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 249,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxpremium6"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Premium</h1>
+                      </div>
+                      <img src={img2} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />8 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        lugar americano
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <li>
+                        <Ok />
+                        brinde surpresa
+                      </li>
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 324,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxpremium8"}>
+                    <button>Escolha essa box</button>
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={styles.swiperCard}>
+                <div className={styles.card}>
+                  <div className={styles.dataCard}>
+                    <div className={styles.iconBook}>
+                      <div className={styles.titleCard}>
+                        <h1>Box Premium</h1>
+                      </div>
+                      <img src={img2} alt="Imagem" />
+                    </div>
+                    <ul>
+                      <li>
+                        <Ok />
+                        12 Lugares
+                      </li>
+                      <li>
+                        <Ok />
+                        porta-guardanapos
+                      </li>
+                      <li>
+                        <Ok />
+                        lugar americano
+                      </li>
+                      <li>
+                        <Ok />
+                        guardanapos personalizados
+                      </li>
+                      <li>
+                        <Ok />
+                        brinde surpresa
+                      </li>
+                    </ul>
+                    <div className={styles.preco}>
+                      {/* <p>
+                        De <del>699,99</del>
+                      </p> */}
+                      <p>
+                        Por <span>R$ 455,90</span>
+                      </p>
+                    </div>
+                  </div>
+                  <Link to={"/checkout/boxpremium12"}>
                     <button>Escolha essa box</button>
                   </Link>
                 </div>
