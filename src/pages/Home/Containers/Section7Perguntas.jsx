@@ -12,11 +12,8 @@ import img1 from "../../../assets/imgs/Home/1.webp";
 import img2 from "../../../assets/imgs/Home/2.webp";
 import Ok from "../../../components/Home/Ok";
 
-import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
-
 export default function Section7Perguntas() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  initMercadoPago("TEST-c86cc155-2835-41e5-a1ae-e7aadb7aaf3f");
 
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -89,12 +86,11 @@ export default function Section7Perguntas() {
                       </li>
                       <li>
                         <Ok />
-                        lugar americano
-                      </li>
-                      <li>
-                        <Ok />
                         guardanapos personalizados
                       </li>
+                      <br />
+                      <br />
+                      <br />
                     </ul>
                     <div className={styles.preco}>
                       {/* <p>
@@ -134,6 +130,10 @@ export default function Section7Perguntas() {
                       <li>
                         <Ok />
                         guardanapos personalizados
+                      </li>
+                      <li>
+                        <Ok />
+                        brinde surpresa
                       </li>
                     </ul>
                     <div className={styles.preco}>
