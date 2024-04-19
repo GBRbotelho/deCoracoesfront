@@ -93,7 +93,7 @@ export default function Section7Perguntas() {
                       </li>
                       <li>
                         <Ok />
-                        guardanapos 100% algodão
+                        guardanapos personalizados
                       </li>
                     </ul>
                     <div className={styles.preco}>
@@ -133,7 +133,7 @@ export default function Section7Perguntas() {
                       </li>
                       <li>
                         <Ok />
-                        guardanapos 100% algodão
+                        guardanapos personalizados
                       </li>
                     </ul>
                     <div className={styles.preco}>
