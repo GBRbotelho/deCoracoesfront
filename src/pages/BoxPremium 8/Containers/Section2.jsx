@@ -193,14 +193,14 @@ export default function Section2() {
           <div className={styles.price}>
             <div className={styles.dataPrice}>
               <p>Subtotal:</p>
-              <p>324,90</p>
+              <p>204,90</p>
             </div>
             <div className={styles.dataPrice}>
               <p>
                 <strong>Total:</strong>
               </p>
               <p>
-                <strong>324,90</strong>
+                <strong>204,90</strong>
               </p>
             </div>
           </div>

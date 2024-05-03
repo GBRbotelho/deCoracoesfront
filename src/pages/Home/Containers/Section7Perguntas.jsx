@@ -97,7 +97,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 45,90</span>
+                        Por <span>R$ 39,90</span>
                       </p>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 67,90</span>
+                        Por <span>R$ 59,90</span>
                       </p>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 89,90</span>
+                        Por <span>R$ 79,90</span>
                       </p>
                     </div>
                   </div>
@@ -216,7 +216,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 109,90</span>
+                        Por <span>R$ 99,90</span>
                       </p>
                     </div>
                   </div>
@@ -256,7 +256,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 159,90</span>
+                        Por <span>R$ 139,90</span>
                       </p>
                     </div>
                   </div>
@@ -300,7 +300,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 179,90</span>
+                        Por <span>R$ 119,90</span>
                       </p>
                     </div>
                   </div>
@@ -344,7 +344,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 249,90</span>
+                        Por <span>R$ 162,90</span>
                       </p>
                     </div>
                   </div>
@@ -388,7 +388,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 324,90</span>
+                        Por <span>R$ 204,90</span>
                       </p>
                     </div>
                   </div>
@@ -433,7 +433,7 @@ export default function Section7Perguntas() {
                         De <del>699,99</del>
                       </p> */}
                       <p>
-                        Por <span>R$ 455,90</span>
+                        Por <span>R$ 292,90</span>
                       </p>
                     </div>
                   </div>

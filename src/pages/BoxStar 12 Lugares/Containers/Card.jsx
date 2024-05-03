@@ -8,7 +8,7 @@ export default function Card({ state }) {
   const navigate = useNavigate();
   initMercadoPago("APP_USR-2288d17f-56db-4bfb-9a37-996543d0eb51");
   const initialization = {
-    amount: 159.9,
+    amount: 139.9,
   };
 
   const customization = {
