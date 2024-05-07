@@ -18,6 +18,7 @@ export default function Section2() {
     cidade: "",
     estado: "",
     cep: "",
+    complemento: "",
   });
 
   const handleInputChange = (evt) => {
@@ -37,16 +38,16 @@ export default function Section2() {
             </div>
             <form>
               <h1>Dados de contato</h1>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Nome</label>
-                <input
-                  onChange={handleInputChange}
-                  type="text"
-                  name="nome"
-                  value={state.nome}
-                />
-              </div>
               <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Nome</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="nome"
+                    value={state.nome}
+                  />
+                </div>
                 <div className={styles.inputLabel}>
                   <label htmlFor="">Sobrenome</label>
                   <input
@@ -54,15 +55,6 @@ export default function Section2() {
                     type="text"
                     name="sobrenome"
                     value={state.sobrenome}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">CPF do assinante:</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="cpf"
-                    value={state.cpf}
                   />
                 </div>
               </div>
@@ -85,6 +77,18 @@ export default function Section2() {
                     value={state.telefone}
                   />
                 </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">CPF do assinante:</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="cpf"
+                    value={state.cpf}
+                  />
+                </div>
+                <div className={styles.inputLabel}></div>
               </div>
               <h1>Dados de endereço</h1>
               <div className={styles.line}>
@@ -146,6 +150,15 @@ export default function Section2() {
                     value={state.cep}
                   />
                 </div>
+              </div>
+              <div className={styles.inputLabel}>
+                <label htmlFor="">Complemento</label>
+                <input
+                  onChange={handleInputChange}
+                  type="text"
+                  name="complemento"
+                  value={state.complemento}
+                />
               </div>
             </form>
             <div>

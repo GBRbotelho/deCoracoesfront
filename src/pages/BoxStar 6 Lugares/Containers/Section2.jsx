@@ -18,29 +18,8 @@ export default function Section2() {
     cidade: "",
     estado: "",
     cep: "",
+    complemento: "",
   });
-
-  const obj = {
-    dataUser: {
-      firstName: "Gabriel",
-      lastName: "Botelho",
-      areaCode: "19",
-      number: "996855849",
-      streetName: "Rua Guara",
-      streetNumber: 8,
-      city: { name: "Campinas" },
-      zipCode: "13053-341",
-    },
-    token: "4ca5c8d78a6f75f7ef170c7451f4fd8b",
-    issuer_id: "24",
-    payment_method_id: "master",
-    transaction_amount: 5,
-    installments: 1,
-    payer: {
-      email: "gabrielbbotelho05@gmail.com",
-      identification: { type: "CPF", number: "12345678909" },
-    },
-  };
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -59,16 +38,16 @@ export default function Section2() {
             </div>
             <form>
               <h1>Dados de contato</h1>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Nome</label>
-                <input
-                  onChange={handleInputChange}
-                  type="text"
-                  name="nome"
-                  value={state.nome}
-                />
-              </div>
               <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Nome</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="nome"
+                    value={state.nome}
+                  />
+                </div>
                 <div className={styles.inputLabel}>
                   <label htmlFor="">Sobrenome</label>
                   <input
@@ -76,15 +55,6 @@ export default function Section2() {
                     type="text"
                     name="sobrenome"
                     value={state.sobrenome}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">CPF do assinante:</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="cpf"
-                    value={state.cpf}
                   />
                 </div>
               </div>
@@ -107,6 +77,18 @@ export default function Section2() {
                     value={state.telefone}
                   />
                 </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">CPF do assinante:</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="cpf"
+                    value={state.cpf}
+                  />
+                </div>
+                <div className={styles.inputLabel}></div>
               </div>
               <h1>Dados de endereço</h1>
               <div className={styles.line}>
@@ -168,6 +150,15 @@ export default function Section2() {
                     value={state.cep}
                   />
                 </div>
+              </div>
+              <div className={styles.inputLabel}>
+                <label htmlFor="">Complemento</label>
+                <input
+                  onChange={handleInputChange}
+                  type="text"
+                  name="complemento"
+                  value={state.complemento}
+                />
               </div>
             </form>
             <div>
