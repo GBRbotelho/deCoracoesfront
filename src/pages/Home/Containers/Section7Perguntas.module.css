@@ -39,6 +39,8 @@
   display: flex;
   flex-direction: column;
   gap: calc(20px * var(--factor));
+  height: calc(550px * var(--factor));
+  overflow-y: scroll;
 }
 
 .perguntas li {
@@ -49,10 +51,14 @@
   gap: calc(20px * var(--factor));
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .perguntas li svg {
   width: calc(27px * var(--factor));
+  height: calc(27px * var(--factor));
+  min-width: calc(27px * var(--factor));
+  min-height: calc(27px * var(--factor));
   transition: 0.2s;
 }
 
@@ -63,6 +69,34 @@
 
 .perguntas p {
   font-size: calc(27px * var(--factor));
+}
+
+.questao {
+  width: calc(600px * var(--factor));
+  padding: calc(15px * var(--factor)) calc(10px * var(--factor));
+  border-radius: calc(8px * var(--factor));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resposta {
+  display: none;
+  padding: calc(15px * var(--factor)) calc(10px * var(--factor));
+  border-radius: calc(8px * var(--factor));
+  justify-content: center;
+  align-items: center;
+  width: calc(600px * var(--factor));
+}
+
+.resposta p {
+  font-size: calc(20px * var(--factor));
+  width: 95%;
+  text-align: justify;
+}
+
+.visivel {
+  display: flex;
 }
 
 .ebook {

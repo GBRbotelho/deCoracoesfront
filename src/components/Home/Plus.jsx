@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Plus() {
+export default function Plus({ click }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +11,7 @@ export default function Plus() {
       height="500"
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
+      onClick={click}
     >
       <path
         fill="var(--color2)"

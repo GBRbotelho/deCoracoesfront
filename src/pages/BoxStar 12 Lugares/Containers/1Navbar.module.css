@@ -29,7 +29,7 @@
   color: var(--color1);
   background-color: var(--color2);
   border-radius: calc(9px * var(--factor));
-  font-size: calc(38px * var(--factor));
+  font-size: calc(20px * var(--factor));
   padding: calc(3px * var(--factor)) calc(30px * var(--factor));
   transition: 0.2s;
 }

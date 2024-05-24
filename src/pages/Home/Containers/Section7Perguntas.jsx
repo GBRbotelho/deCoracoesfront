@@ -14,6 +14,7 @@ import Ok from "../../../components/Home/Ok";
 
 export default function Section7Perguntas() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [question, setQuestion] = useState(null);
 
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -24,6 +25,14 @@ export default function Section7Perguntas() {
     window.addEventListener("resize", handleWindowResize);
   }, []);
 
+  const handleClick = (number) => {
+    if (question === number) {
+      setQuestion(null);
+    } else {
+      setQuestion(number);
+    }
+  };
+
   return (
     <section className={styles.section} id="planos">
       <h1 className={styles.title}>Planos</h1>
@@ -33,24 +42,142 @@ export default function Section7Perguntas() {
             <h1>Perguntas frequentes</h1>
             <ul>
               <li>
-                <p>Preciso renovar o plano todo mês?</p>
-                <Plus />
+                <div className={styles.questao}>
+                  <p>Assinei e agora?</p>
+                  <Plus click={() => handleClick(1)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 1 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>Fique de olho no seu email, você
+                    receberá a confirmação da compra da assinatura e só aguardar
+                    o envio
+                  </p>
+                </div>
               </li>
               <li>
-                <p>Assinei e agora?</p>
-                <Plus />
+                <div className={styles.questao}>
+                  <p>Quando recebo minha box?</p>
+                  <Plus click={() => handleClick(2)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 2 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>As boxes serão enviadas no dia 20 de
+                    cada mês. Depois só aguardar o prazo da transportadora
+                  </p>
+                </div>
               </li>
               <li>
-                <p>Quanto tempo dura o plano?</p>
-                <Plus />
+                <div className={styles.questao}>
+                  <p>Qual a diferença entre as boxes?</p>
+                  <Plus click={() => handleClick(3)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 3 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>As duas boxes contém a mesma roupa de
+                    mesa. O que diferencia é que na Box Premium você recebe
+                    também uma pequena decoração de mesa e alguns utensílios
+                    como bandejas, tábuas, mantegueiras, bowls, etc.
+                  </p>
+                </div>
               </li>
               <li>
-                <p>Quando recebo minha box?</p>
-                <Plus />
+                <div className={styles.questao}>
+                  <p>Como funciona o pagamento?</p>
+                  <Plus click={() => handleClick(4)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 4 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>O pagamento é feito exclusivamente por
+                    cartão de crédito. O sistema de pagamento é o recorrente,
+                    isso é, não tomamos o limite do seu cartão e você não
+                    precisa refazer a assinatura todo mês, o pagamento é
+                    automático, o valor será cobrado no seu cartão na mesma data
+                    da compra. Quando quiser cancelar, só nos avisar.
+                  </p>
+                </div>
               </li>
               <li>
-                <p>E se eu quiser cancelar?</p>
-                <Plus />
+                <div className={styles.questao}>
+                  <p>Quanto tempo dura o plano?</p>
+                  <Plus click={() => handleClick(5)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 5 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>A renovação é automática mas você fica
+                    quanto tempo quiser, ele é livre de fidelidade, você pode
+                    cancelar a qualquer momento.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div className={styles.questao}>
+                  <p>Posso escolher o que vai na minha box?</p>
+                  <Plus click={() => handleClick(6)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 6 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>O plano de assinatura tem por ideal
+                    enviar produtos surpresa, para que você realmente tenha uma
+                    experiência unboxing surpreendente, como receber um presente
+                    todo mês na sua casa.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div className={styles.questao}>
+                  <p>Preciso renovar o plano todo mês?</p>
+                  <Plus click={() => handleClick(7)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 7 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>Não, o plano é renovado automaticamente.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div className={styles.questao}>
+                  <p>E se eu quiser cancelar?</p>
+                  <Plus click={() => handleClick(8)} />
+                </div>
+                <div
+                  className={`${styles.resposta} ${
+                    question === 8 ? styles.visivel : ""
+                  } `}
+                >
+                  <p>
+                    <strong>R: </strong>A maneira mais fácil de cancelar é nos
+                    avisar no whatsapp (199999999999). A confirmação e
+                    cancelamento
+                  </p>
+                </div>
               </li>
             </ul>
           </div>

@@ -1,5 +1,5 @@
 .section {
-  margin-top: calc(360px * var(--factor));
+  margin-top: calc(300px * var(--factor));
   display: flex;
   width: 100vw;
   align-items: flex-end;
@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  gap: calc(50px * var(--factor));
+  gap: calc(30px * var(--factor));
   position: relative;
   left: calc(250px * var(--factor));
 }
@@ -44,7 +44,7 @@
 }
 
 .text p {
-  font-size: calc(45px * var(--factor));
+  font-size: calc(30px * var(--factor));
   font-weight: 600;
   width: calc(600px * var(--factor));
   padding: 0 calc(20px * var(--factor));
@@ -52,13 +52,13 @@
 
 .subtitle h2 {
   color: var(--color3);
-  font-size: calc(65px * var(--factor));
+  font-size: calc(45px * var(--factor));
   font-weight: 600;
 }
 
 @media (max-width: 1040px) {
   .section {
-    margin-bottom: calc(55px * var(--factor));
+    margin-bottom: calc(40px * var(--factor));
   }
 
   .content {

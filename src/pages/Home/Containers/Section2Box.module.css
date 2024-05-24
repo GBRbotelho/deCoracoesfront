@@ -8,7 +8,7 @@
 }
 
 .container {
-  margin: calc(150px * var(--factor)) 0;
+  margin: calc(60px * var(--factor)) 0;
   display: flex;
   align-items: center;
   gap: calc(100px * var(--factor));
