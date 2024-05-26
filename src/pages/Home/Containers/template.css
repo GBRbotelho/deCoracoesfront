@@ -1,0 +1,44 @@
+.box {
+  transform: translate(0%, 0%);
+}
+
+.box select {
+  background-color: var(--color2);
+  color: white;
+  padding: 12px;
+  width: 70px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  appearance: none; /* Remove o estilo padrão do sistema operacional */
+  -webkit-appearance: none; /* Para navegadores baseados no WebKit */
+  -moz-appearance: none;
+}
+
+.box::before {
+  content: "↓";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}

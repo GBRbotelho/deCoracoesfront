@@ -100,7 +100,7 @@
 }
 
 .ebook {
-  width: calc(600px * var(--factor));
+  width: calc(500px * var(--factor));
   border-radius: calc(16px * var(--factor));
   display: flex;
   align-items: center;
@@ -113,6 +113,7 @@
 
 .card {
   width: 100%;
+  height: calc(800px * var(--factor));
   border: 0px solid;
   border-top: calc(20px * var(--factor)) solid var(--color6);
   display: flex;
@@ -148,7 +149,7 @@
 }
 
 .iconBook img {
-  height: calc(350px * var(--factor));
+  height: calc(230px * var(--factor));
 }
 
 .dataCard ul {
@@ -158,24 +159,25 @@
 }
 
 .dataCard li {
-  font-size: calc(27px * var(--factor));
+  font-size: calc(24px * var(--factor));
   display: flex;
   align-items: center;
   gap: calc(8px * var(--factor));
 }
 
 .dataCard li svg {
-  width: calc(27px * var(--factor));
+  width: calc(24px * var(--factor));
 }
 
 .preco {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 .preco p {
-  font-size: calc(25px * var(--factor));
+  font-size: calc(20px * var(--factor));
 }
 
 .preco del {
@@ -184,7 +186,7 @@
 }
 
 .preco span {
-  font-size: calc(44px * var(--factor));
+  font-size: calc(36px * var(--factor));
   font-weight: 800;
 }
 
@@ -202,6 +204,12 @@
   color: var(--color2);
   background-color: var(--color1);
   cursor: pointer;
+}
+
+.lugares {
+  display: flex;
+  align-items: center;
+  gap: calc(10px * var(--factor));
 }
 
 @media (max-width: 1000px) {
