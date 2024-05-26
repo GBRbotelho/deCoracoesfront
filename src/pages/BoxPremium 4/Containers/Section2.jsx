@@ -6,6 +6,7 @@ import img1 from "../../../assets/imgs/Home/1.webp";
 
 export default function Section2() {
   const [cont, setCont] = useState(1);
+  const [error, setError] = useState(null);
   const [state, setState] = useState({
     cpf: "",
     nome: "",
@@ -25,6 +26,25 @@ export default function Section2() {
     const { name, value } = evt.target;
 
     setState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCont = () => {
+    // Check if all fields are filled
+    const allFieldsFilled = Object.values(state).every(
+      (value) => value.trim() !== ""
+    );
+
+    if (allFieldsFilled) {
+      setCont(2);
+      setError(null);
+    } else {
+      setError("Por favor, preencha todos os campos.");
+
+      // Clear error message after 2 seconds
+      setTimeout(() => {
+        setError(null);
+      }, 2000);
+    }
   };
 
   return (
@@ -160,15 +180,10 @@ export default function Section2() {
                   value={state.complemento}
                 />
               </div>
+              {error && <p className={styles.error}>{error}</p>}
             </form>
             <div>
-              <button
-                onClick={() => {
-                  setCont(cont + 1);
-                }}
-              >
-                Proximo passo
-              </button>
+              <button onClick={handleCont}>Proximo passo</button>
             </div>
           </div>
         )}
