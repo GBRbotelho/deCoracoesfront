@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import styles from "./Section2.module.css";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Card from "./Card";
+import img1 from "../../../assets/imgs/Home/1.webp";
 
-export default function Section2() {
+export default function Section2({ box }) {
   const [cont, setCont] = useState(1);
+  const [error, setError] = useState(null);
   const [state, setState] = useState({
     cpf: "",
     nome: "",
@@ -17,34 +19,32 @@ export default function Section2() {
     cidade: "",
     estado: "",
     cep: "",
+    complemento: "",
   });
-
-  const obj = {
-    dataUser: {
-      firstName: "Gabriel",
-      lastName: "Botelho",
-      areaCode: "19",
-      number: "996855849",
-      streetName: "Rua Guara",
-      streetNumber: 8,
-      city: { name: "Campinas" },
-      zipCode: "13053-341",
-    },
-    token: "4ca5c8d78a6f75f7ef170c7451f4fd8b",
-    issuer_id: "24",
-    payment_method_id: "master",
-    transaction_amount: 5,
-    installments: 1,
-    payer: {
-      email: "gabrielbbotelho05@gmail.com",
-      identification: { type: "CPF", number: "12345678909" },
-    },
-  };
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
 
     setState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCont = () => {
+    // Check if all fields are filled
+    const allFieldsFilled = Object.values(state).every(
+      (value) => value.trim() !== ""
+    );
+
+    if (allFieldsFilled) {
+      setCont(2);
+      setError(null);
+    } else {
+      setError("Por favor, preencha todos os campos.");
+
+      // Clear error message after 2 seconds
+      setTimeout(() => {
+        setError(null);
+      }, 2000);
+    }
   };
 
   return (
@@ -58,16 +58,16 @@ export default function Section2() {
             </div>
             <form>
               <h1>Dados de contato</h1>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Nome</label>
-                <input
-                  onChange={handleInputChange}
-                  type="text"
-                  name="nome"
-                  value={state.nome}
-                />
-              </div>
               <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">Nome</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="nome"
+                    value={state.nome}
+                  />
+                </div>
                 <div className={styles.inputLabel}>
                   <label htmlFor="">Sobrenome</label>
                   <input
@@ -75,15 +75,6 @@ export default function Section2() {
                     type="text"
                     name="sobrenome"
                     value={state.sobrenome}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">CPF do assinante:</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="cpf"
-                    value={state.cpf}
                   />
                 </div>
               </div>
@@ -106,6 +97,18 @@ export default function Section2() {
                     value={state.telefone}
                   />
                 </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.inputLabel}>
+                  <label htmlFor="">CPF do assinante:</label>
+                  <input
+                    onChange={handleInputChange}
+                    type="text"
+                    name="cpf"
+                    value={state.cpf}
+                  />
+                </div>
+                <div className={styles.inputLabel}></div>
               </div>
               <h1>Dados de endereço</h1>
               <div className={styles.line}>
@@ -168,15 +171,19 @@ export default function Section2() {
                   />
                 </div>
               </div>
+              <div className={styles.inputLabel}>
+                <label htmlFor="">Complemento</label>
+                <input
+                  onChange={handleInputChange}
+                  type="text"
+                  name="complemento"
+                  value={state.complemento}
+                />
+              </div>
+              {error && <p className={styles.error}>{error}</p>}
             </form>
             <div>
-              <button
-                onClick={() => {
-                  setCont(cont + 1);
-                }}
-              >
-                Proximo passo
-              </button>
+              <button onClick={handleCont}>Proximo passo</button>
             </div>
           </div>
         )}
@@ -187,7 +194,7 @@ export default function Section2() {
               <h1>informações do pagamento</h1>
             </div>
             <div className={styles.cardMP}>
-              <Card state={state} />
+              <Card state={state} box={box} />
             </div>
             <div>
               <button
@@ -207,30 +214,21 @@ export default function Section2() {
           <div className={styles.box}>
             <div className={styles.image}></div>
             <div className={styles.dataBox}>
-              <p>Box Premium</p>
-              <p>2 Lugares</p>
-              <p>1x Quantidade</p>
+              <p>{box.name}</p>
+              <p>{box.lugares}</p>
             </div>
           </div>
           <div className={styles.price}>
             <div className={styles.dataPrice}>
               <p>Subtotal:</p>
-              <p>299,99</p>
-            </div>
-            <div className={styles.dataPrice}>
-              <p>Entrega:</p>
-              <p>299,99</p>
-            </div>
-            <div className={styles.dataPrice}>
-              <p>Descontos:</p>
-              <p>299,99</p>
+              <p>{box.price}</p>
             </div>
             <div className={styles.dataPrice}>
               <p>
                 <strong>Total:</strong>
               </p>
               <p>
-                <strong>299,99</strong>
+                <strong>{box.price}</strong>
               </p>
             </div>
           </div>

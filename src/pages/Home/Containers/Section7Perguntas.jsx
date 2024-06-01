@@ -298,7 +298,7 @@ export default function Section7Perguntas() {
                       </p>
                     </div>
                     <Link
-                      to={`/checkout/boxstar${
+                      to={`/checkout/star${
                         boxStarArray.find((box) => {
                           return box.lugares === boxStar;
                         }).lugares
@@ -375,7 +375,7 @@ export default function Section7Perguntas() {
                       </p>
                     </div>
                     <Link
-                      to={`/checkout/boxpremium${
+                      to={`/checkout/premium${
                         boxPremiumArray.find((box) => {
                           return box.lugares === boxPremium;
                         }).lugares

@@ -40,16 +40,7 @@ function App() {
   return (
     <Router>
       <Route path="/" element={<Index />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/checkout/boxstar2" element={<BoxStar2 />} />
-      <Route path="/checkout/boxstar4" element={<BoxStar4 />} />
-      <Route path="/checkout/boxstar6" element={<BoxStar6 />} />
-      <Route path="/checkout/boxstar8" element={<BoxStar8 />} />
-      <Route path="/checkout/boxstar12" element={<BoxStar12 />} />
-      <Route path="/checkout/boxpremium4" element={<BoxPremium4 />} />
-      <Route path="/checkout/boxpremium6" element={<BoxPremium6 />} />
-      <Route path="/checkout/boxpremium8" element={<BoxPremium8 />} />
-      <Route path="/checkout/boxpremium12" element={<BoxPremium12 />} />
+      <Route path="/checkout/:slug" element={<Checkout />} />
       <Route path="/authorized" element={<Authorized />} />
       <Route path="/pending" element={<Pending />} />
       <Route path="/negada" element={<Negada />} />
