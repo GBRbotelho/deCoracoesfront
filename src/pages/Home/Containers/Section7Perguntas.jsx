@@ -219,7 +219,7 @@ export default function Section7Perguntas() {
                 >
                   <p>
                     <strong>R: </strong>A maneira mais fácil de cancelar é nos
-                    avisar no whatsapp (199999999999). A confirmação e
+                    avisar no whatsapp (+55 19 99446-3927). A confirmação e
                     cancelamento
                   </p>
                 </div>
