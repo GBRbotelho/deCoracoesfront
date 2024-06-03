@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Section2.module.css";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Card from "./Card";
+import { useForm } from "../../../utils/useForm";
 import img1 from "../../../assets/imgs/Home/1.webp";
 
 export default function Section2({ box }) {
@@ -9,7 +10,7 @@ export default function Section2({ box }) {
   const [error, setError] = useState(null);
   const [state, setState] = useState({
     cpf: "",
-    nome: "",
+    nome: "da",
     sobrenome: "",
     ddd: "",
     telefone: "",
@@ -22,10 +23,12 @@ export default function Section2({ box }) {
     complemento: "",
   });
 
-  const handleInputChange = (evt) => {
-    const { name, value } = evt.target;
-
-    setState((prev) => ({ ...prev, [name]: value }));
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setState({
+      ...state,
+      [name]: value,
+    });
   };
 
   const handleCont = () => {
@@ -60,21 +63,23 @@ export default function Section2({ box }) {
               <h1>Dados de contato</h1>
               <div className={styles.line}>
                 <div className={styles.inputLabel}>
-                  <label htmlFor="">Nome</label>
+                  <label htmlFor="nome">Nome</label>
                   <input
-                    onChange={handleInputChange}
                     type="text"
                     name="nome"
-                    value={state.nome}
+                    value={state.name}
+                    onChange={handleInputChange}
+                    onKeyDown={(e) => useForm(e, "letras")}
                   />
                 </div>
                 <div className={styles.inputLabel}>
                   <label htmlFor="">Sobrenome</label>
                   <input
-                    onChange={handleInputChange}
                     type="text"
                     name="sobrenome"
                     value={state.sobrenome}
+                    onChange={handleInputChange}
+                    onKeyDown={(e) => useForm(e, "letras")}
                   />
                 </div>
               </div>
@@ -86,6 +91,8 @@ export default function Section2({ box }) {
                     type="text"
                     name="ddd"
                     value={state.ddd}
+                    maxLength={2}
+                    onKeyDown={(e) => useForm(e, "numeros")}
                   />
                 </div>
                 <div className={styles.inputLabel}>
@@ -95,6 +102,8 @@ export default function Section2({ box }) {
                     type="text"
                     name="telefone"
                     value={state.telefone}
+                    maxLength={11}
+                    onKeyDown={(e) => useForm(e, "telefone")}
                   />
                 </div>
               </div>
@@ -106,6 +115,8 @@ export default function Section2({ box }) {
                     type="text"
                     name="cpf"
                     value={state.cpf}
+                    maxLength={11}
+                    onKeyDown={(e) => useForm(e, "cpf")}
                   />
                 </div>
                 <div className={styles.inputLabel}></div>

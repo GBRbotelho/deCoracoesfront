@@ -13,15 +13,6 @@ import Checkout from "./pages/Checkout/@Index";
 import Authorized from "./pages/Authorized/@Index";
 import Pending from "./pages/pending/@Index";
 import Negada from "./pages/negada/@Index";
-import BoxStar2 from "./pages/BoxStar 2 Lugares/@Index";
-import BoxStar4 from "./pages/BoxStar 4 Lugares/@Index";
-import BoxStar6 from "./pages/BoxStar 6 Lugares/@Index";
-import BoxStar8 from "./pages/BoxStar 8 Lugares/@Index";
-import BoxStar12 from "./pages/BoxStar 12 Lugares/@Index";
-import BoxPremium4 from "./pages/BoxPremium 4/@Index";
-import BoxPremium6 from "./pages/BoxPremium 6/@Index";
-import BoxPremium8 from "./pages/BoxPremium 8/@Index";
-import BoxPremium12 from "./pages/BoxPremium 12/@Index";
 
 function App() {
   const { pathname } = useLocation();
