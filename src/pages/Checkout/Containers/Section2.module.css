@@ -3,7 +3,8 @@
   width: 100vw;
   align-items: flex-start;
   justify-content: center;
-  background-color: #fff7f7;
+  background-image: url("../../../assets/imgs/checkout/backgroundCheckout.webp");
+  background-size: cover;
 }
 
 .content {
@@ -11,7 +12,6 @@
   gap: calc(200px * var(--factor));
   margin-bottom: calc(100px * var(--factor));
   height: min-content;
-  background-color: #fff7f7;
 }
 
 .formData form {

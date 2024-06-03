@@ -5,6 +5,7 @@
   padding: calc(10px * var(--factor)) 0;
   align-items: center;
   font-family: var(--font1);
+  background-color: #fff7f7;
 }
 
 .logo {
