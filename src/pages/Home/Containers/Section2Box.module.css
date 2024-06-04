@@ -15,15 +15,16 @@
 }
 
 .content h1 {
-  font-size: calc(60px * var(--factor));
+  font-size: calc(58px * var(--factor));
   font-weight: 600;
   color: var(--color3);
+  padding-left: calc(20px * var(--factor));
 }
 
 .content p {
   margin-top: calc(40px * var(--factor));
   color: var(--color3);
-  font-size: calc(34px * var(--factor));
+  font-size: calc(32px * var(--factor));
   width: calc(1140px * var(--factor));
   font-weight: 300;
   background-color: var(--color1);

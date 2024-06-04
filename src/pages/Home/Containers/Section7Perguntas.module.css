@@ -9,7 +9,7 @@
 }
 
 .title {
-  font-size: calc(60px * var(--factor));
+  font-size: calc(58px * var(--factor));
   font-weight: 700;
   color: var(--color3);
 }
@@ -33,6 +33,7 @@
 
 .perguntas h1 {
   font-size: calc(42px * var(--factor));
+  padding-left: 15px;
 }
 
 .perguntas ul {
