@@ -49,7 +49,7 @@ export default function Navbar() {
               <li>home</li>
             </Link>
             {/* <li>kit avulsos</li> */}
-            <li>planos</li>
+            <li onClick={() => scrollToSection("planos")}>planos</li>
           </ul>
           {/* <button>Consulta</button> */}
         </div>

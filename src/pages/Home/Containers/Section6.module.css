@@ -17,7 +17,7 @@
 }
 
 .text {
-  font-size: calc(36px * var(--factor));
+  font-size: calc(33px * var(--factor));
   color: var(--color3);
   width: calc(650px * var(--factor));
 }
@@ -26,7 +26,7 @@
   font-family: var(--font1);
   color: var(--color1);
   background-color: var(--color2);
-  font-size: calc(38px * var(--factor));
+  font-size: calc(36px * var(--factor));
   padding: calc(3px * var(--factor)) calc(35px * var(--factor));
   transition: 0.2s;
   text-wrap: nowrap;

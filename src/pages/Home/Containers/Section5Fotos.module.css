@@ -14,7 +14,7 @@
 }
 
 .title h1 {
-  font-size: calc(60px * var(--factor));
+  font-size: calc(58px * var(--factor));
   width: calc(600px * var(--factor));
   font-weight: 700;
   color: var(--color3);
