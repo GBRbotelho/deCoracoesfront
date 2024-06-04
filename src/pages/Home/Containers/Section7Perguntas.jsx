@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Section7Perguntas.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/navigation";
 import Plus from "../../../components/Home/Plus";
 import { Link } from "react-router-dom";
 import "./template.css";
@@ -230,7 +231,8 @@ export default function Section7Perguntas() {
         <div className={styles.ebook}>
           <div className={styles.cards}>
             <Swiper
-              modules={[Autoplay]}
+              modules={[Autoplay, Navigation]}
+              navigation={true}
               spaceBetween="10%"
               slidesPerView={
                 (windowWidth > 1000 && 1) ||
@@ -240,149 +242,153 @@ export default function Section7Perguntas() {
               loop={true}
             >
               <SwiperSlide className={styles.swiperCard}>
-                <div className={styles.card}>
-                  <div className={styles.dataCard}>
-                    <div className={styles.iconBook}>
-                      <div className={styles.titleCard}>
-                        <h1>Box Star</h1>
-                      </div>
-                      <img src={img1} alt="Imagem" />
-                    </div>
-
-                    <ul>
-                      <li>
-                        <Ok />
-                        de 2 a 12 Lugares
-                      </li>
-                      <li>
-                        <Ok />
-                        porta-guardanapos
-                      </li>
-                      <li>
-                        <Ok />
-                        guardanapos personalizados
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <div className={styles.preco}>
-                      <div>
-                        <label htmlFor="">Lugares:</label>
-                        <div className="box">
-                          <select
-                            value={boxStar}
-                            onChange={(e) =>
-                              setBoxStar(parseInt(e.target.value, 10))
-                            }
-                          >
-                            {boxStarArray.map((box, index) => (
-                              <option key={index} value={box.lugares}>
-                                {box.lugares}
-                              </option>
-                            ))}
-                          </select>
+                <div className={styles.containerCard}>
+                  <div className={styles.card}>
+                    <div className={styles.dataCard}>
+                      <div className={styles.iconBook}>
+                        <div className={styles.titleCard}>
+                          <h1>Box Star</h1>
                         </div>
+                        <img src={img1} alt="Imagem" />
                       </div>
-                      {/* <p>
+
+                      <ul>
+                        <li>
+                          <Ok />
+                          de 2 a 12 Lugares
+                        </li>
+                        <li>
+                          <Ok />
+                          porta-guardanapos
+                        </li>
+                        <li>
+                          <Ok />
+                          guardanapos personalizados
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div className={styles.preco}>
+                        <div>
+                          <label htmlFor="">Lugares:</label>
+                          <div className="box">
+                            <select
+                              value={boxStar}
+                              onChange={(e) =>
+                                setBoxStar(parseInt(e.target.value, 10))
+                              }
+                            >
+                              {boxStarArray.map((box, index) => (
+                                <option key={index} value={box.lugares}>
+                                  {box.lugares}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                        {/* <p>
                         De <del>699,99</del>
                       </p> */}
-                      <p>
-                        Por{" "}
-                        <span>
-                          {
-                            boxStarArray.find((box) => {
-                              return box.lugares === boxStar;
-                            }).valor
-                          }
-                        </span>
-                      </p>
+                        <p>
+                          Por{" "}
+                          <span>
+                            {
+                              boxStarArray.find((box) => {
+                                return box.lugares === boxStar;
+                              }).valor
+                            }
+                          </span>
+                        </p>
+                      </div>
+                      <Link
+                        to={`/checkout/star${
+                          boxStarArray.find((box) => {
+                            return box.lugares === boxStar;
+                          }).lugares
+                        }`}
+                      >
+                        <button>Escolha essa box</button>
+                      </Link>
                     </div>
-                    <Link
-                      to={`/checkout/star${
-                        boxStarArray.find((box) => {
-                          return box.lugares === boxStar;
-                        }).lugares
-                      }`}
-                    >
-                      <button>Escolha essa box</button>
-                    </Link>
                   </div>
                 </div>
               </SwiperSlide>
               <SwiperSlide className={styles.swiperCard}>
-                <div className={styles.card}>
-                  <div className={styles.dataCard}>
-                    <div className={styles.iconBook}>
-                      <div className={styles.titleCard}>
-                        <h1>Box Premium</h1>
-                      </div>
-                      <img src={img2} alt="Imagem" />
-                    </div>
-                    <ul>
-                      <li>
-                        <Ok />
-                        de 4 a 12 Lugares
-                      </li>
-                      <li>
-                        <Ok />
-                        porta-guardanapos
-                      </li>
-                      <li>
-                        <Ok />
-                        lugar americano
-                      </li>
-                      <li>
-                        <Ok />
-                        guardanapos personalizados
-                      </li>
-                      <li>
-                        <Ok />
-                        brinde surpresa
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <div className={styles.preco}>
-                      <div className={styles.lugares}>
-                        <label htmlFor="">Lugares:</label>
-                        <div className="box">
-                          <select
-                            value={boxPremium}
-                            onChange={(e) =>
-                              setBoxPremium(parseInt(e.target.value, 10))
-                            }
-                          >
-                            {boxPremiumArray.map((box, index) => (
-                              <option key={index} value={box.lugares}>
-                                {box.lugares}
-                              </option>
-                            ))}
-                          </select>
+                <div className={styles.containerCard}>
+                  <div className={styles.card}>
+                    <div className={styles.dataCard}>
+                      <div className={styles.iconBook}>
+                        <div className={styles.titleCard}>
+                          <h1>Box Premium</h1>
                         </div>
+                        <img src={img2} alt="Imagem" />
                       </div>
-                      {/* <p>
+                      <ul>
+                        <li>
+                          <Ok />
+                          de 4 a 12 Lugares
+                        </li>
+                        <li>
+                          <Ok />
+                          porta-guardanapos
+                        </li>
+                        <li>
+                          <Ok />
+                          lugar americano
+                        </li>
+                        <li>
+                          <Ok />
+                          guardanapos personalizados
+                        </li>
+                        <li>
+                          <Ok />
+                          brinde surpresa
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div className={styles.preco}>
+                        <div className={styles.lugares}>
+                          <label htmlFor="">Lugares:</label>
+                          <div className="box">
+                            <select
+                              value={boxPremium}
+                              onChange={(e) =>
+                                setBoxPremium(parseInt(e.target.value, 10))
+                              }
+                            >
+                              {boxPremiumArray.map((box, index) => (
+                                <option key={index} value={box.lugares}>
+                                  {box.lugares}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                        {/* <p>
                         De <del>699,99</del>
                       </p> */}
-                      <p>
-                        Por{" "}
-                        <span>
-                          {
-                            boxPremiumArray.find((box) => {
-                              return box.lugares === boxPremium;
-                            }).valor
-                          }
-                        </span>
-                      </p>
+                        <p>
+                          Por{" "}
+                          <span>
+                            {
+                              boxPremiumArray.find((box) => {
+                                return box.lugares === boxPremium;
+                              }).valor
+                            }
+                          </span>
+                        </p>
+                      </div>
+                      <Link
+                        to={`/checkout/premium${
+                          boxPremiumArray.find((box) => {
+                            return box.lugares === boxPremium;
+                          }).lugares
+                        }`}
+                      >
+                        <button>Escolha essa box</button>
+                      </Link>
                     </div>
-                    <Link
-                      to={`/checkout/premium${
-                        boxPremiumArray.find((box) => {
-                          return box.lugares === boxPremium;
-                        }).lugares
-                      }`}
-                    >
-                      <button>Escolha essa box</button>
-                    </Link>
                   </div>
                 </div>
               </SwiperSlide>

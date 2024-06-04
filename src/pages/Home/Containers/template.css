@@ -42,3 +42,17 @@
 .box select option {
   padding: 30px;
 }
+
+div.swiper-button-prev,
+div.swiper-button-next {
+  color: red;
+}
+
+div.swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 10px);
+}
+
+div.swiper-button-prev,
+div.swiper-button-next {
+  color: red;
+}

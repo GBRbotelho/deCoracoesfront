@@ -27,7 +27,12 @@ export default function Section3() {
             podem transformar instantes em lembranças inesquecíveis
           </p>
           <div className={styles.button}>
-            <button onClick={() => scrollToSection("planos")}>eu quero</button>
+            <a
+              href="https://api.whatsapp.com/send?phone=5519994463927&text=Ol%C3%A1,%20tenho%20duvidas%20referente%20a%20Box."
+              target="_blank"
+            >
+              <button>eu quero</button>
+            </a>
           </div>
         </div>
       </div>
