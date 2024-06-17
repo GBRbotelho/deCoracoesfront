@@ -4,6 +4,10 @@ import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Card from "./Card";
 import { useForm } from "../../../utils/useForm";
 import img1 from "../../../assets/imgs/Home/1.webp";
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+
 
 export default function Section2({ box }) {
   const [cont, setCont] = useState(1);
@@ -53,8 +57,16 @@ export default function Section2({ box }) {
   return (
     <section className={styles.section}>
       <div className={styles.content}>
+      
         {cont === 1 && (
           <div className={styles.formData}>
+            <Stepper activeStep={cont} alternativeLabel>
+        {["Dados do cliente","Dados de pagamento"].map((label, index) => (
+        <Step key={index + 1}>
+        <StepLabel>{label}</StepLabel>
+        </Step>
+      ))}
+      </Stepper>
             <div>
               <h1>Passo 1:</h1>
               <h1>informações do cliente</h1>
@@ -200,6 +212,13 @@ export default function Section2({ box }) {
         )}
         {cont === 2 && (
           <div className={styles.formData}>
+            <Stepper activeStep={cont} alternativeLabel>
+        {["Dados do cliente","Dados de pagamento"].map((label, index) => (
+        <Step key={index + 1}>
+        <StepLabel>{label}</StepLabel>
+        </Step>
+      ))}
+      </Stepper>
             <div>
               <h1>Passo 2:</h1>
               <h1>informações do pagamento</h1>
