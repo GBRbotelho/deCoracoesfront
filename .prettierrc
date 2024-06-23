@@ -1,0 +1,18 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "prettier.printWidth": 80,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "redhat.telemetry.enabled": true,
+    "terminal.integrated.env.windows": {},
+    "console-ninja.featureSet": "Community"
+}
