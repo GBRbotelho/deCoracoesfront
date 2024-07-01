@@ -12,3 +12,76 @@
   background-image: url("../../assets/imgs/Home/backgroundHome.webp");
   background-size: cover;
 }
+
+.popup {
+  width: 450px;
+  height: 300px;
+  display: flex;
+}
+
+.pop1 {
+  width: 50%;
+}
+
+.pop1 img {
+  border-radius: 15px;
+}
+
+.pop2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.pop2 h1 {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  color: rgb(236, 61, 61);
+}
+
+.pop2 p {
+  text-align: center;
+  color: rgb(51, 50, 50);
+}
+
+.pop2 button {
+  background-color: rgb(236, 61, 61);
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.pop2 button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .popup {
+    width: 360px;
+    height: 240px;
+    display: flex;
+  }
+
+  .pop2 h1 {
+    font-size: 17px;
+  }
+
+  .pop2 p {
+    font-size: 13px;
+  }
+
+  .pop2 button {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+}
