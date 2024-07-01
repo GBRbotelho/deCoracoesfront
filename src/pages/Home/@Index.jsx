@@ -81,7 +81,12 @@ export default function Index() {
               <p>CLIQUE PARA SABER MAIS</p>
             </div>
             <div className={styles.button}>
-              <button>SAIBA COMO</button>
+              <a
+                href="https://api.whatsapp.com/send?phone=5519994463927&text=Ol%C3%A1,%20tenho%20duvidas%20referente%20a%20Box."
+                target="_blank"
+              >
+                <button>SAIBA COMO</button>
+              </a>
             </div>
           </div>
         </div>
