@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect  } from "react";
 import styles from "./@Index.module.css";
 import Navbar from "./Containers/1Navbar";
 import Section1 from "./Containers/Section1";
@@ -8,6 +8,11 @@ import Section4Funcionamento from "./Containers/Section4Funcionamento";
 import Section5Fotos from "./Containers/Section5Fotos";
 import Section7Perguntas from "./Containers/Section7Perguntas";
 import Section6 from "./Containers/Section6";
+import Login from "../../components/Modals/Login";
+
+export default function Index() {
+  const [modalLogin, setModalLogin] = useState(false);
+
 import popup from "../../assets/imgs/Home/popup.webp";
 import gift from "../../assets/imgs/Home/gift.webp";
 
@@ -44,10 +49,11 @@ export default function Index() {
     }, 2000);
   }, []);
 
+
   return (
     <main id="root" className={styles.main}>
       <div className={styles.div1}>
-        <Navbar />
+        <Navbar setModalLogin={setModalLogin} />
         <Section1 />
       </div>
       <Section2Box />
@@ -56,6 +62,7 @@ export default function Index() {
       <Section5Fotos />
       <Section6 />
       <Section7Perguntas />
+      {modalLogin && <Login setState={setModalLogin} />}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setIsOpen(false)}

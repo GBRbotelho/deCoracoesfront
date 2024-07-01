@@ -1,0 +1,39 @@
+/* FlashMessage.module.css */
+
+.flashMessage {
+  position: fixed;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.success {
+  background-color: #4caf50; /* cor de fundo para sucesso */
+  color: #fff; /* cor do texto para sucesso */
+  border: 1px solid #388e3c; /* cor da borda para sucesso */
+}
+
+.error {
+  background-color: #f44336; /* cor de fundo para erro */
+  color: #fff; /* cor do texto para erro */
+  border: 1px solid #d32f2f; /* cor da borda para erro */
+}
+
+.closeButton {
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.closeButton:hover {
+  transform: scale(1.25);
+}
