@@ -8,7 +8,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 export default function Navbar({ setModalLogin }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const { user } = useAuth();
+  const { token, logout } = useAuth();
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -37,7 +37,7 @@ export default function Navbar({ setModalLogin }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {!user ? (
+        {!token ? (
           <button
             className="flex items-center gap-2"
             onClick={() => setModalLogin(true)}
@@ -92,7 +92,10 @@ export default function Navbar({ setModalLogin }) {
                 <li className="cursor-pointer px-10 hover:bg-slate-200">
                   Configurações
                 </li>
-                <li className="cursor-pointer px-10 hover:bg-slate-200 flex gap-2 items-center">
+                <li
+                  className="cursor-pointer px-10 hover:bg-slate-200 flex gap-2 items-center"
+                  onClick={logout}
+                >
                   Sair
                   <svg
                     className="w-4 h-4"

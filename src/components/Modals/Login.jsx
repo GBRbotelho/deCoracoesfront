@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { UserFacotory } from "../../factories/UserFactory";
+import { useAuth } from "../../contexts/AuthContext";
 
 function Login(props) {
+  const [user, setUser] = useState({ email: "", password: "" });
+  const { saveToken } = useAuth();
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setUser({ ...user, [id]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await UserFacotory.authenticate(user);
+    if (response.success) {
+      saveToken(response.token);
+      props.setState(false);
+    }
+  };
+
   return (
     <div className="fixed bg-black bg-opacity-30 top-0 left-0 w-screen h-screen flex items-center justify-center">
       <div
@@ -49,6 +67,8 @@ function Login(props) {
                 placeholder="Entre com seu email"
                 required=""
                 type="email"
+                value={user.email}
+                onChange={handleChange}
               />
             </div>
             <div className="space-y-2">
@@ -64,11 +84,14 @@ function Login(props) {
                 placeholder="Entre com sua senha"
                 required=""
                 type="password"
+                value={user.password}
+                onChange={handleChange}
               />
             </div>
             <button
               className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-red-500 hover:bg-red-600 text-white"
               type="submit"
+              onClick={handleSubmit}
             >
               Login
             </button>
