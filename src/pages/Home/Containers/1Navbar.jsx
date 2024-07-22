@@ -4,8 +4,10 @@ import Hamburger from "../../../components/Navbar/Hamburger";
 import Close from "../../../components/Navbar/Close";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar({ setModalLogin }) {
+  const navigate = useNavigate();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { token, logout, user } = useAuth();
@@ -87,7 +89,10 @@ export default function Navbar({ setModalLogin }) {
             >
               <ul className="m-2">
                 {user.level > 0 && (
-                  <li className="cursor-pointer px-10 hover:bg-slate-200">
+                  <li
+                    className="cursor-pointer px-10 hover:bg-slate-200"
+                    onClick={() => navigate("/dashboard")}
+                  >
                     Dashboard
                   </li>
                 )}

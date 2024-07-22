@@ -13,6 +13,7 @@ import Checkout from "./pages/Checkout/@Index";
 import Authorized from "./pages/Authorized/@Index";
 import Pending from "./pages/pending/@Index";
 import Negada from "./pages/negada/@Index";
+import DashboardLayout from "./components/Layout/DashbaordLayout";
 
 function App() {
   const { pathname } = useLocation();
@@ -36,6 +37,14 @@ function App() {
       <Route path="/pending" element={<Pending />} />
       <Route path="/negada" element={<Negada />} />
       <Route path="*" element={<Navigate to="/" />} />
+      <Route
+        path="/dashboard"
+        element={
+          <DashboardLayout>
+            <div></div>
+          </DashboardLayout>
+        }
+      />
     </Router>
   );
 }

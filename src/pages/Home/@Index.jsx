@@ -48,7 +48,7 @@ export default function Index() {
   }, []);
 
   return (
-    <main id="root" className={styles.main}>
+    <main id="root" className={styles.main + "overflow-x-hidden"}>
       <div className={styles.div1}>
         <Navbar setModalLogin={setModalLogin} />
         <Section1 />
