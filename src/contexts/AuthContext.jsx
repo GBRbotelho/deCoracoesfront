@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { UserFacotory } from "../factories/UserFactory";
 
 const AuthContext = createContext();
 
@@ -10,9 +11,15 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
 
-  const saveToken = (token) => {
+  const saveToken = async (token) => {
     sessionStorage.setItem("accessToken", token);
-    setToken(token);
+    const response = await UserFacotory.tokenData(token);
+    if (response.success) {
+      setToken(token);
+      setUser(response.data.dataValues);
+    } else {
+      logout();
+    }
   };
 
   const logout = () => {

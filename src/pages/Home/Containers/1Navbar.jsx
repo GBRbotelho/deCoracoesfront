@@ -8,7 +8,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 export default function Navbar({ setModalLogin }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const { token, logout } = useAuth();
+  const { token, logout, user } = useAuth();
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -62,7 +62,7 @@ export default function Navbar({ setModalLogin }) {
         ) : (
           <div className="relative">
             <button className="flex gap-2 items-center">
-              Gabriel
+              {user.name}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -86,6 +86,11 @@ export default function Navbar({ setModalLogin }) {
               } left-full top-[120%] bg-white rounded-lg overflow-hidden`}
             >
               <ul className="m-2">
+                {user.level > 0 && (
+                  <li className="cursor-pointer px-10 hover:bg-slate-200">
+                    Dashboard
+                  </li>
+                )}
                 <li className="cursor-pointer px-10 hover:bg-slate-200">
                   Pedidos
                 </li>
