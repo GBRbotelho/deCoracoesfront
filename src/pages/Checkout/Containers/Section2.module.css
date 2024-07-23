@@ -12,10 +12,11 @@
   gap: calc(200px * var(--factor));
   margin-bottom: calc(100px * var(--factor));
   height: min-content;
+  z-index: 0;
 }
 
 .formData form {
-  width: calc(800px * var(--factor));
+  width: 100%;
 }
 
 .line {
@@ -68,7 +69,7 @@
   border-radius: calc(16px * var(--factor));
   display: flex;
   flex-direction: column;
-  gap: calc(50px * var(--factor));
+  gap: calc(30px * var(--factor));
 }
 
 .cardMP {

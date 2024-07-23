@@ -27,9 +27,9 @@ export default function Navbar({ setModalLogin }) {
       </div>
       <nav className={styles.nav}>
         <ul>
-          <Link to={"/"}>
+          {/* <Link to={"/"}>
             <li>home</li>
-          </Link>
+          </Link> */}
           {/* <li>kit avulsos</li> */}
           <li onClick={() => scrollToSection("planos")}>planos</li>
         </ul>
@@ -142,9 +142,9 @@ export default function Navbar({ setModalLogin }) {
           }`}
         >
           <ul>
-            <Link to={"/"}>
+            {/* <Link to={"/"}>
               <li>home</li>
-            </Link>
+            </Link> */}
             {/* <li>kit avulsos</li> */}
             <li onClick={() => scrollToSection("planos")}>planos</li>
           </ul>

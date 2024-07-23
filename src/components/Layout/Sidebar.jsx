@@ -31,7 +31,7 @@ export default function Sidebar() {
                 className="w-8 h-8 rounded object-cover"
               /> */}
               <span className="text-lg font-bold text-white ml-3">
-                Decorações
+                DeCorações
               </span>
             </a>
             <ul className="mt-4">
@@ -44,9 +44,27 @@ export default function Sidebar() {
                   <span className="text-sm">Inicio</span>
                 </Link>
               </li>
+              <li className="mb-1 group">
+                <Link
+                  to="/dashboard/clients"
+                  className="flex items-center py-2 px-4 text-red-300 hover:bg-red-950 hover:text-red-100 rounded-md group-[.active]:bg-red-800 group-[.active]:text-white group-[.selected]:bg-red-950 group-[.selected]:text-red-100"
+                >
+                  <i className="ri-calendar-check-line  mr-3 text-lg"></i>
+                  <span className="text-sm">Clientes</span>
+                </Link>
+              </li>
+              <li className="mb-1 group">
+                <Link
+                  to="/dashboard/"
+                  className="flex items-center py-2 px-4 text-red-300 hover:bg-red-950 hover:text-red-100 rounded-md group-[.active]:bg-red-800 group-[.active]:text-white group-[.selected]:bg-red-950 group-[.selected]:text-red-100"
+                >
+                  <i className="ri-calendar-check-line  mr-3 text-lg"></i>
+                  <span className="text-sm">Assinaturas</span>
+                </Link>
+              </li>
             </ul>
           </div>
-          {user && user.accountLevel >= 2 && (
+          {user && user.level >= 2 && (
             <div className="mb-1 group">
               <Link
                 to={"/dashboard/usuarios"}
