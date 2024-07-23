@@ -62,7 +62,7 @@ export default function Navbar({ setModalLogin }) {
             Entrar
           </button>
         ) : (
-          <div className="relative">
+          <div className="">
             <button className="flex gap-2 items-center">
               {user.name}
               <svg
@@ -85,7 +85,7 @@ export default function Navbar({ setModalLogin }) {
                 isHovered
                   ? "opacity-100 -translate-x-full"
                   : "opacity-0 translate-x-0"
-              } left-full top-[120%] bg-white rounded-lg overflow-hidden`}
+              } left-full top-[120%] bg-white rounded-lg`}
             >
               <ul className="m-2">
                 {user.level > 0 && (
