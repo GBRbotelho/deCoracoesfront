@@ -14,6 +14,7 @@ import Authorized from "./pages/Authorized/@Index";
 import Pending from "./pages/pending/@Index";
 import Negada from "./pages/negada/@Index";
 import DashboardLayout from "./components/Layout/DashbaordLayout";
+import Clients from "./pages/Dashboard/Clients";
 
 function App() {
   const { pathname } = useLocation();
@@ -42,6 +43,14 @@ function App() {
         element={
           <DashboardLayout>
             <div></div>
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/dashboard/clients"
+        element={
+          <DashboardLayout>
+            <Clients />
           </DashboardLayout>
         }
       />

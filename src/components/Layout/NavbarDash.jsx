@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 function Navbar() {
+  const { user, logout } = useAuth();
   const location = useLocation();
   const pathSegments = location.pathname.split("/");
   const [activeProfile, setActiveProfile] = useState(false);
 
   // Acesse o segmento da URL após "dashboard/"
-  const currentSegment = pathSegments[2]
-    ? pathSegments[2].toUpperCase()
-    : "CONSULTAS";
+  const currentSegment = pathSegments[2] ? pathSegments[2].toUpperCase() : "";
 
   const handleSidebarToggleClick = (e) => {
     e.preventDefault();
@@ -47,11 +47,15 @@ function Navbar() {
       </ul>
       <ul className="ml-auto flex items-center">
         <li>
-          <p className="text-gray-400">Olá, </p>
+          <p className="text-gray-400">Olá, {user && user.name}</p>
         </li>
-
         <li className="dropdown ml-3">
-          <button type="button" className="dropdown-toggle flex items-center">
+          <button
+            type="button"
+            className="dropdown-toggle flex items-center"
+            onClick={() => setActiveProfile(!activeProfile)}
+          >
+            O
             {/* <img
               alt=""
               className="w-8 h-8 rounded-full block object-cover align-middle"
@@ -67,7 +71,13 @@ function Navbar() {
                 Perfil
               </a>
             </li>
-            <li className="cursor-pointer">
+            <Link
+              to={"/"}
+              className="cursor-pointer flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-emerald-500 hover:bg-gray-50"
+            >
+              Sair do Dashboard
+            </Link>
+            <li className="cursor-pointer" onClick={() => logout()}>
               <a className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-emerald-500 hover:bg-gray-50">
                 Sair
               </a>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Section2.module.css";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 import Card from "./Card";
@@ -7,9 +7,21 @@ import img1 from "../../../assets/imgs/Home/1.webp";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import StepWizard from "react-step-wizard";
+import { useAuth } from "../../../contexts/AuthContext";
+import Login from "../../../components/Modals/Login";
+import Plus from "../../../components/Icons/Plus";
+import Address from "../../../components/Modals/Address";
+import { AddressFactory } from "../../../factories/AddressFactory";
 
 export default function Section2({ box }) {
-  const [cont, setCont] = useState(1);
+  const wizardRef = useRef(null);
+  const { user } = useAuth();
+  const [modalLogin, setModalLogin] = useState(false);
+  const [modalAddress, setModalAddress] = useState(false);
+  const [address, setAddress] = useState([]);
+  const [addressSelected, setAddressSelected] = useState(null);
+  const [cont, setCont] = useState(0);
   const [error, setError] = useState(null);
   const [state, setState] = useState({
     cpf: "",
@@ -26,219 +38,145 @@ export default function Section2({ box }) {
     complemento: "",
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setState({
-      ...state,
-      [name]: value,
-    });
+  const fetchAddress = async () => {
+    const response = await AddressFactory.findAll({ userId: user.id });
+    setAddress(response.data);
+    console.log(response);
   };
 
-  const handleCont = () => {
-    // Check if all fields are filled
-    const allFieldsFilled = Object.values(state).every(
-      (value) => value.trim() !== ""
-    );
-
-    if (allFieldsFilled) {
-      setCont(2);
-      setError(null);
-    } else {
-      setError("Por favor, preencha todos os campos.");
-
-      // Clear error message after 2 seconds
-      setTimeout(() => {
-        setError(null);
-      }, 2000);
+  const handleNextStep = () => {
+    if (wizardRef.current) {
+      wizardRef.current.nextStep();
+      setCont(cont + 1);
     }
   };
+
+  const handlePreviousStep = () => {
+    if (wizardRef.current) {
+      setCont(cont - 1);
+      wizardRef.current.previousStep();
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      fetchAddress();
+      if (cont === 0) {
+        handleNextStep();
+      }
+    }
+  }, [user]);
 
   return (
     <section className={styles.section}>
       <div className={styles.content}>
-        {cont === 1 && (
+        <StepWizard ref={wizardRef}>
           <div className={styles.formData}>
             <Stepper activeStep={cont} alternativeLabel>
-              {["Dados do cliente", "Dados de pagamento"].map(
-                (label, index) => (
-                  <Step key={index + 1}>
-                    <StepLabel>{label}</StepLabel>
-                  </Step>
-                )
-              )}
+              {[
+                "Dados do cliente",
+                "Dados de entrega",
+                "Dados de pagamento",
+              ].map((label, index) => (
+                <Step key={index + 1}>
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
             </Stepper>
             <div>
               <h1>Passo 1:</h1>
               <h1>informações do cliente</h1>
             </div>
-            <form>
-              <h1>Dados de contato</h1>
-              <div className={styles.line}>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="nome">Nome</label>
-                  <input
-                    type="text"
-                    name="nome"
-                    value={state.name}
-                    onChange={handleInputChange}
-                    onKeyDown={(e) => useForm(e, "letras")}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Sobrenome</label>
-                  <input
-                    type="text"
-                    name="sobrenome"
-                    value={state.sobrenome}
-                    onChange={handleInputChange}
-                    onKeyDown={(e) => useForm(e, "letras")}
-                  />
-                </div>
-              </div>
-              <div className={styles.line}>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">DDD</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="ddd"
-                    value={state.ddd}
-                    maxLength={2}
-                    onKeyDown={(e) => useForm(e, "numeros")}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Telefone</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="telefone"
-                    value={state.telefone}
-                    maxLength={11}
-                    onKeyDown={(e) => useForm(e, "telefone")}
-                  />
-                </div>
-              </div>
-              <div className={styles.line}>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">CPF do assinante:</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="cpf"
-                    value={state.cpf}
-                    maxLength={11}
-                    onKeyDown={(e) => useForm(e, "cpf")}
-                  />
-                </div>
-                <div className={styles.inputLabel}></div>
-              </div>
-              <h1>Dados de endereço</h1>
-              <div className={styles.line}>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Rua</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="rua"
-                    value={state.rua}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Bairro</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="bairro"
-                    value={state.bairro}
-                  />
-                </div>
-              </div>
-              <div className={styles.line}>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Nª da Residência</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="numero"
-                    value={state.numero}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Cidade</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="cidade"
-                    value={state.cidade}
-                  />
-                </div>
-              </div>
-              <div className={styles.line}>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">Estado</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="estado"
-                    value={state.estado}
-                  />
-                </div>
-                <div className={styles.inputLabel}>
-                  <label htmlFor="">CEP</label>
-                  <input
-                    onChange={handleInputChange}
-                    type="text"
-                    name="cep"
-                    value={state.cep}
-                  />
-                </div>
-              </div>
-              <div className={styles.inputLabel}>
-                <label htmlFor="">Complemento</label>
-                <input
-                  onChange={handleInputChange}
-                  type="text"
-                  name="complemento"
-                  value={state.complemento}
-                />
-              </div>
-              {error && <p className={styles.error}>{error}</p>}
-            </form>
-            <div>
-              <button onClick={handleCont}>Proximo passo</button>
+
+            <div className="w-full flex justify-center">
+              <button onClick={() => setModalLogin(true)}>Fazer Login</button>
             </div>
           </div>
-        )}
-        {cont === 2 && (
+
           <div className={styles.formData}>
             <Stepper activeStep={cont} alternativeLabel>
-              {["Dados do cliente", "Dados de pagamento"].map(
-                (label, index) => (
-                  <Step key={index + 1}>
-                    <StepLabel>{label}</StepLabel>
-                  </Step>
-                )
-              )}
+              {[
+                "Dados do cliente",
+                "Dados de entrega",
+                "Dados de pagamento",
+              ].map((label, index) => (
+                <Step key={index + 1}>
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
             </Stepper>
             <div>
               <h1>Passo 2:</h1>
-              <h1>informações do pagamento</h1>
+              <h1>Dados para entrega</h1>
+            </div>
+            {address &&
+              address.map((item) => {
+                return (
+                  <div
+                    className={`bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-all hover:scale-105 rounded-lg border border-[#d1d1d1] hover:bg-[#d1d1d1] flex flex-row items-center bg-opacity-50 ${
+                      addressSelected === item.id ? "bg-[#d1d1d1]" : ""
+                    }`}
+                    onClick={() => {
+                      addressSelected === item.id
+                        ? setAddressSelected(null)
+                        : setAddressSelected(item.id);
+                    }}
+                  >
+                    <div className="p-3 flex-1">
+                      <div className="grid grid-cols-3 gap-1">
+                        <div className="text-right font-medium">Endereço:</div>
+                        <div className="col-span-2">
+                          {item.street}, {item.number}
+                        </div>
+                        <div className="text-right font-medium">Cidade:</div>
+                        <div className="col-span-2">
+                          {item.city}-{item.state}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            <div>
+              <div
+                onClick={() => setModalAddress(true)}
+                className="bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-all hover:scale-105 hover:bg-[#d1d1d1] rounded-lg border border-[#d1d1d1]"
+              >
+                <div className="flex items-center justify-center p-6">
+                  <Plus classname="w-8 h-8 pr-2" />
+                  <p className="text-lg font-medium">Adicionar endereço</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex justify-end">
+              <button onClick={handleNextStep}>Proximo passo</button>
+            </div>
+          </div>
+
+          <div className={styles.formData}>
+            <Stepper activeStep={cont} alternativeLabel>
+              {[
+                "Dados do cliente",
+                "Dados de entrega",
+                "Dados de pagamento",
+              ].map((label, index) => (
+                <Step key={index + 1}>
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+            <div>
+              <h1>Passo 3:</h1>
+              <h1>Dados para pagamento</h1>
             </div>
             <div className={styles.cardMP}>
               <Card state={state} box={box} />
             </div>
             <div>
-              <button
-                onClick={() => {
-                  setCont(cont - 1);
-                }}
-              >
-                Passo anterior
-              </button>
+              <button onClick={handlePreviousStep}>Passo anterior</button>
             </div>
           </div>
-        )}
+        </StepWizard>
         <div className={styles.pedido}>
           <div className={styles.title}>
             <h1>Resumo da assinatura</h1>
@@ -266,6 +204,10 @@ export default function Section2({ box }) {
           </div>
         </div>
       </div>
+      {modalLogin && <Login setState={setModalLogin} />}
+      {modalAddress && (
+        <Address setState={setModalAddress} fetch={fetchAddress} />
+      )}
     </section>
   );
 }
