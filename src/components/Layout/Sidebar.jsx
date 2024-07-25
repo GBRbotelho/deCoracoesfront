@@ -55,7 +55,7 @@ export default function Sidebar() {
               </li>
               <li className="mb-1 group">
                 <Link
-                  to="/dashboard/"
+                  to="/dashboard/subscriptions"
                   className="flex items-center py-2 px-4 text-red-300 hover:bg-red-950 hover:text-red-100 rounded-md group-[.active]:bg-red-800 group-[.active]:text-white group-[.selected]:bg-red-950 group-[.selected]:text-red-100"
                 >
                   <i className="ri-calendar-check-line  mr-3 text-lg"></i>
