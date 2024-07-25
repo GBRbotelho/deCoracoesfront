@@ -22,21 +22,6 @@ export default function Section2({ box }) {
   const [address, setAddress] = useState([]);
   const [addressSelected, setAddressSelected] = useState(null);
   const [cont, setCont] = useState(0);
-  const [error, setError] = useState(null);
-  const [state, setState] = useState({
-    cpf: "",
-    nome: "da",
-    sobrenome: "",
-    ddd: "",
-    telefone: "",
-    rua: "",
-    numero: "",
-    bairro: "",
-    cidade: "",
-    estado: "",
-    cep: "",
-    complemento: "",
-  });
 
   const fetchAddress = async () => {
     const response = await AddressFactory.findAll({ userId: user.id });
@@ -170,7 +155,7 @@ export default function Section2({ box }) {
               <h1>Dados para pagamento</h1>
             </div>
             <div className={styles.cardMP}>
-              <Card state={state} box={box} />
+              <Card address={addressSelected} box={box} />
             </div>
             <div>
               <button onClick={handlePreviousStep}>Passo anterior</button>

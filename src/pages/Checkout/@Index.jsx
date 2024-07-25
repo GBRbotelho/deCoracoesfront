@@ -6,6 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const box = [
   {
+    id: "2c9380848ef387c7018ef824257a037e",
     name: "Box Star",
     lugares: "2 Lugares",
     price: "39,90",
@@ -13,6 +14,7 @@ const box = [
     slug: "star2",
   },
   {
+    id: "2c9380848ef3876b018ef824d6d10364",
     name: "Box Star",
     lugares: "4 Lugares",
     price: "59,90",
@@ -20,6 +22,7 @@ const box = [
     slug: "star4",
   },
   {
+    id: "2c9380848ef3876b018ef82556560365",
     name: "Box Star",
     lugares: "6 Lugares",
     price: "79,90",
@@ -27,6 +30,7 @@ const box = [
     slug: "star6",
   },
   {
+    id: "2c9380848ef387c7018ef825b0750380",
     name: "Box Star",
     lugares: "8 Lugares",
     price: "99,90",
@@ -34,6 +38,7 @@ const box = [
     slug: "star8",
   },
   {
+    id: "2c9380848ef38745018ef826039903ab",
     name: "Box Star",
     lugares: "12 Lugares",
     price: "139,90",
@@ -41,6 +46,7 @@ const box = [
     slug: "star12",
   },
   {
+    id: "2c9380848ef387c7018ef826a1020382",
     name: "Box Premium",
     lugares: "4 Lugares",
     price: "119,90",
@@ -48,6 +54,7 @@ const box = [
     slug: "premium4",
   },
   {
+    id: "2c9380848ef3876b018ef8270e7c0366",
     name: "Box Premium",
     lugares: "6 Lugares",
     price: "162,90",
@@ -55,6 +62,7 @@ const box = [
     slug: "premium6",
   },
   {
+    id: "2c9380848ef387c7018ef827a79c0384",
     name: "Box Premium",
     lugares: "8 Lugares",
     price: "204,90",
@@ -62,6 +70,7 @@ const box = [
     slug: "premium8",
   },
   {
+    id: "2c9380848ef38745018ef827f4d803ac",
     name: "Box Premium",
     lugares: "12 Lugares",
     price: "292,90",
