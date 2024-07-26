@@ -71,4 +71,20 @@ export const UserFacotory = {
       throw error;
     }
   },
+  find: async function (id) {
+    try {
+      const response = await fetch(`${this.baseUrl}/users/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("Erro ao recuperar dados:", error);
+      throw error;
+    }
+  },
 };

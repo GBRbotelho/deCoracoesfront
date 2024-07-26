@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { SubscriptionFactory } from "../../factories/SubscriptionFactory";
+import { useNavigate } from "react-router-dom";
 
 function Subscriptions() {
   const [subscriptions, setSubscriptions] = useState([]);
+  const navigate = useNavigate();
 
   const fetchSubscriptions = async () => {
     const response = await SubscriptionFactory.findAll();
@@ -31,17 +33,23 @@ function Subscriptions() {
             <tbody className="bg-white text-center">
               {subscriptions.length > 0 ? (
                 subscriptions.map((subscription, index) => (
-                  <tr key={index} className="text-gray-700">
-                    <td className="px-4 py-3 border" key={`${subscription.id}`}>
+                  <tr
+                    key={index}
+                    className="text-gray-700 transition duration-200 hover:bg-gray-200 hover:cursor-pointer"
+                    onClick={() =>
+                      navigate(`/dashboard/clients/${subscription.userId.id}`)
+                    }
+                  >
+                    <td className="px-4 py-3" key={`${subscription.id}`}>
                       {subscription.userId.name}
                     </td>
-                    <td className="px-4 py-3 border" key={`${subscription.id}`}>
-                      {subscription.userId.name}
+                    <td className="px-4 py-3" key={`${subscription.id}`}>
+                      {subscription.dataValues.planName}
                     </td>
-                    <td className="px-4 py-3 border" key={`${subscription.id}`}>
-                      {subscription.userId.name}
+                    <td className="px-4 py-3" key={`${subscription.id}`}>
+                      {subscription.dataValues.planPrice}
                     </td>
-                    <td className="px-4 py-3 border" key={`${subscription.id}`}>
+                    <td className="px-4 py-3" key={`${subscription.id}`}>
                       {new Date(
                         subscription.userId.createdAt
                       ).toLocaleDateString()}

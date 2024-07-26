@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { UserFacotory } from "../../factories/UserFactory";
+import { useNavigate } from "react-router-dom";
 
 function Clients() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   const fetchUsers = async () => {
     const response = await UserFacotory.findAll();
@@ -30,17 +32,21 @@ function Clients() {
             <tbody className="bg-white text-center">
               {users.length > 0 ? (
                 users.map((user, index) => (
-                  <tr key={index} className="text-gray-700">
-                    <td className="px-4 py-3 border" key={`${user.id}`}>
+                  <tr
+                    key={index}
+                    className="text-gray-700 transition duration-200 hover:bg-gray-200 hover:cursor-pointer"
+                    onClick={() => navigate(`/dashboard/clients/${user.id}`)}
+                  >
+                    <td className="px-4 py-3 " key={`${user.id}`}>
                       {user.name}
                     </td>
-                    <td className="px-4 py-3 border" key={`${user.id}`}>
+                    <td className="px-4 py-3 " key={`${user.id}`}>
                       {user.surname}
                     </td>
-                    <td className="px-4 py-3 border" key={`${user.id}`}>
+                    <td className="px-4 py-3 " key={`${user.id}`}>
                       {user.email}
                     </td>
-                    <td className="px-4 py-3 border" key={`${user.id}`}>
+                    <td className="px-4 py-3 " key={`${user.id}`}>
                       {user.phone}
                     </td>
                   </tr>
