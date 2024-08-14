@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Card.css";
-import { initMercadoPago } from "@mercadopago/sdk-react";
-import { CardPayment } from "@mercadopago/sdk-react";
+import { initMercadoPago, CardPayment } from "@mercadopago/sdk-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContext";
 
 export default function Card({ address, box }) {
   const { user } = useAuth();
   const navigate = useNavigate();
-  initMercadoPago("APP_USR-2288d17f-56db-4bfb-9a37-996543d0eb51");
+
+  useEffect(() => {
+    initMercadoPago("APP_USR-2288d17f-56db-4bfb-9a37-996543d0eb51");
+  }, []);
+
   const initialization = {
     amount: box.amount,
   };
@@ -29,7 +32,6 @@ export default function Card({ address, box }) {
   };
 
   const onSubmit = async (formData) => {
-    e.preventDefault();
     const dataSend = {
       ...formData,
       user: user.id,
@@ -74,6 +76,7 @@ export default function Card({ address, box }) {
 
   const onError = async (error) => {
     // callback chamado para todos os casos de erro do Brick
+    console.log("Errour");
     console.log(error);
   };
 
