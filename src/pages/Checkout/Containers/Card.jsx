@@ -41,7 +41,7 @@ export default function Card({ address, box }) {
 
     try {
       // Defina a URL para a rota de criação de assinatura em seu servidor back-end
-      const url = `http://localhost:3000/mp/create-subscription`;
+      const url = `https://decoracoesapi.vercel.app/mp/create-subscription`;
 
       // Envie uma solicitação POST com os dados do formulário do cartão de crédito
       const response = await fetch(url, {
