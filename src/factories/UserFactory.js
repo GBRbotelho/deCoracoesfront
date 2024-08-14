@@ -1,5 +1,5 @@
 export const UserFacotory = {
-  baseUrl: "http://localhost:5173/api",
+  baseUrl: "https://decoracoesapi.vercel.app",
 
   authenticate: async function (data) {
     try {
@@ -48,6 +48,7 @@ export const UserFacotory = {
       });
 
       const result = await response.json();
+
       return result;
     } catch (error) {
       console.error("Erro ao recuperar dados:", error);

@@ -37,21 +37,21 @@ function Subscriptions() {
                     key={index}
                     className="text-gray-700 transition duration-200 hover:bg-gray-200 hover:cursor-pointer"
                     onClick={() =>
-                      navigate(`/dashboard/clients/${subscription.userId.id}`)
+                      navigate(`/dashboard/clients/${subscription.user.id}`)
                     }
                   >
                     <td className="px-4 py-3" key={`${subscription.id}`}>
-                      {subscription.userId.name}
+                      {subscription.user.name}
                     </td>
                     <td className="px-4 py-3" key={`${subscription.id}`}>
-                      {subscription.dataValues.planName}
+                      {subscription.planName}
                     </td>
                     <td className="px-4 py-3" key={`${subscription.id}`}>
-                      {subscription.dataValues.planPrice}
+                      {subscription.planPrice}
                     </td>
                     <td className="px-4 py-3" key={`${subscription.id}`}>
                       {new Date(
-                        subscription.userId.createdAt
+                        subscription.user.createdAt
                       ).toLocaleDateString()}
                     </td>
                   </tr>

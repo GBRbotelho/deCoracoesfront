@@ -1,5 +1,5 @@
 export const SubscriptionFactory = {
-  baseUrl: "http://localhost:5173/api",
+  baseUrl: "https://decoracoesapi.vercel.app",
 
   findAll: async function () {
     try {

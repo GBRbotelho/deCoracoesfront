@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     const response = await UserFacotory.tokenData(token);
     if (response.success) {
       setToken(token);
-      setUser(response.data.dataValues);
+      setUser(response.data);
     } else {
       logout();
     }

@@ -51,7 +51,6 @@ export default function Card({ address, box }) {
       });
 
       const data = await response.json();
-      console.log(data);
 
       // Verifique se a resposta é bem-sucedida
       if (data.success === true) {

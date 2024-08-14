@@ -12,7 +12,7 @@ function ViewClient() {
 
   const fetchUser = async () => {
     const response = await UserFacotory.find(id);
-    setUser(response.data.dataValues);
+    setUser(response.data);
     setSubscriptions(response.data.subscriptions);
   };
 

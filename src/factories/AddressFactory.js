@@ -1,5 +1,5 @@
 export const AddressFactory = {
-  baseUrl: "http://localhost:5173/api",
+  baseUrl: "https://decoracoesapi.vercel.app",
 
   create: async function (data) {
     try {
@@ -30,6 +30,7 @@ export const AddressFactory = {
       });
 
       const result = await response.json();
+      console.log(result);
       return result;
     } catch (error) {
       console.error("Erro ao resgatar:", error);
