@@ -5,6 +5,7 @@
   padding: calc(10px * var(--factor)) 0;
   align-items: center;
   font-family: var(--font1);
+  z-index: 10;
 }
 
 .logo {

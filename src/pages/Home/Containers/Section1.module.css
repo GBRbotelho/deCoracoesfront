@@ -5,6 +5,7 @@
   align-items: flex-end;
   justify-content: center;
   color: var(--color1);
+  z-index: 1;
 }
 
 .content {
