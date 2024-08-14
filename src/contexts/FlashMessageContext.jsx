@@ -3,12 +3,17 @@ import FlashMessage from "../utils/FlashMessage";
 
 const FlashMessageContext = createContext();
 
+export const useFlashMessage = () => {
+  return useContext(FlashMessageContext);
+};
+
 export const FlashMessageProvider = ({ children }) => {
   const [flashMessage, setFlashMessage] = useState(null);
   const [timeoutId, setTimeoutId] = useState(null);
 
   const showMessage = (message, type = "success") => {
     // Limpa o temporizador existente, se houver
+    console.log("Passou");
     if (timeoutId) {
       clearTimeout(timeoutId);
     }

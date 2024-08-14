@@ -13,6 +13,7 @@ import Login from "../../../components/Modals/Login";
 import Plus from "../../../components/Icons/Plus";
 import Address from "../../../components/Modals/Address";
 import { AddressFactory } from "../../../factories/AddressFactory";
+import { useFlashMessage } from "../../../contexts/FlashMessageContext";
 
 export default function Section2({ box }) {
   const wizardRef = useRef(null);
@@ -21,6 +22,7 @@ export default function Section2({ box }) {
   const [modalAddress, setModalAddress] = useState(false);
   const [address, setAddress] = useState([]);
   const [addressSelected, setAddressSelected] = useState(null);
+  const { showMessage } = useFlashMessage();
   const [cont, setCont] = useState(0);
 
   const fetchAddress = async () => {
@@ -134,7 +136,16 @@ export default function Section2({ box }) {
               </div>
             </div>
             <div className="w-full flex justify-end">
-              <button onClick={handleNextStep}>Proximo passo</button>
+              <button
+                onClick={() => {
+                  if (addressSelected) {
+                    handleNextStep();
+                  }
+                }}
+                disabled={!addressSelected}
+              >
+                Proximo passo
+              </button>
             </div>
           </div>
 

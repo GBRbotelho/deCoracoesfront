@@ -6,6 +6,7 @@ import gift from "../assets/imgs/Home/gift.webp";
 import styles from "../pages/Home/@Index.module.css";
 
 import Modal from "react-modal";
+import zIndex from "@mui/material/styles/zIndex";
 
 const customStyles = {
   overlay: {
@@ -23,6 +24,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     boxShadow: "rgba(236, 61, 6, 1) 4px 4px 1px",
+    zIndex: "100000000",
   },
 };
 
