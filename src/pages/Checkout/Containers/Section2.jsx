@@ -101,7 +101,7 @@ export default function Section2({ box }) {
                 return (
                   <div
                     className={`bg-card text-card-foreground shadow-sm w-full cursor-pointer transition-all hover:scale-105 rounded-lg border border-[#d1d1d1] hover:bg-[#d1d1d1] flex flex-row items-center bg-opacity-50 ${
-                      addressSelected === item.id ? "bg-[#d1d1d1]" : ""
+                      addressSelected === item.id ? "bg-red-500 scale-105" : ""
                     }`}
                     onClick={() => {
                       addressSelected === item.id
