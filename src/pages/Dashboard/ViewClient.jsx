@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { UserFacotory } from "../../factories/UserFactory";
+import { UserFactory } from "../../factories/UserFactory";
 import { useParams } from "react-router-dom";
 import SubscriptionModal from "../../components/Modals/SubscriptionModal";
 
@@ -11,7 +11,7 @@ function ViewClient() {
   const { id } = useParams();
 
   const fetchUser = async () => {
-    const response = await UserFacotory.find(id);
+    const response = await UserFactory.find(id);
     setUser(response.data);
     setSubscriptions(response.data.subscriptions);
   };

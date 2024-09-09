@@ -21,7 +21,9 @@
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.20.1",
+    "react-spinners": "^0.14.1",
     "react-step-wizard": "^5.3.11",
+    "react-toastify": "^10.0.5",
     "swiper": "^11.0.7"
   },
   "devDependencies": {

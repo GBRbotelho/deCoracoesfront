@@ -1,10 +1,13 @@
 import React, { useState, useRef } from "react";
-import { UserFacotory } from "../../factories/UserFactory";
+import { UserFactory } from "../../factories/UserFactory";
 import { useAuth } from "../../contexts/AuthContext";
+import { useLoading } from "../../contexts/LoadingContext";
 import StepWizard from "react-step-wizard";
+import { toast } from "react-toastify";
 
 function Register({ props, modal }) {
   const wizardRef = useRef(null);
+  const { onLoading, offLoading } = useLoading();
   const [user, setUser] = useState({
     name: "",
     surname: "",
@@ -34,14 +37,21 @@ function Register({ props, modal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await UserFacotory.create(user);
+    onLoading();
+    const response = await UserFactory.create(user);
     if (response.success) {
-      const login = await UserFacotory.authenticate(user);
+      toast.success("Criado com sucesso!");
+      const login = await UserFactory.authenticate(user);
       if (login.success) {
         saveToken(login.token);
+        offLoading();
+        toast.success("Logado com sucesso!");
         props.setState(false);
-      }
+      } else toast.error(login.message);
+    } else {
+      toast.error(response.error);
     }
+    offLoading();
   };
 
   return (

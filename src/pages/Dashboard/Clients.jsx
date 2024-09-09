@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { UserFacotory } from "../../factories/UserFactory";
+import { UserFactory } from "../../factories/UserFactory";
 import { useNavigate } from "react-router-dom";
 
 function Clients() {
@@ -7,7 +7,7 @@ function Clients() {
   const navigate = useNavigate();
 
   const fetchUsers = async () => {
-    const response = await UserFacotory.findAll();
+    const response = await UserFactory.findAll();
     setUsers(response.data);
   };
 

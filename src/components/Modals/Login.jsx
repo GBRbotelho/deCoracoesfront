@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { UserFacotory } from "../../factories/UserFactory";
 import { useAuth } from "../../contexts/AuthContext";
 import LoginAuthenticate from "./LoginAuthenticate";
 import Register from "./Register";

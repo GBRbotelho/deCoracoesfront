@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { UserFacotory } from "../../factories/UserFactory";
+import { UserFactory } from "../../factories/UserFactory";
 import { useAuth } from "../../contexts/AuthContext";
+import { useLoading } from "../../contexts/LoadingContext";
+import { toast } from "react-toastify";
 
 function LoginAuthenticate({ props, modal }) {
+  const { onLoading, offLoading } = useLoading();
   const [user, setUser] = useState({ email: "", password: "" });
   const { saveToken } = useAuth();
   const handleChange = (e) => {
@@ -12,11 +15,17 @@ function LoginAuthenticate({ props, modal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await UserFacotory.authenticate(user);
+    onLoading();
+    const response = await UserFactory.authenticate(user);
     if (response.success) {
       saveToken(response.token);
+      offLoading();
       props.setState(false);
+      toast.success("Logado com sucesso!");
+    } else {
+      toast.error(response.message);
     }
+    offLoading();
   };
 
   return (

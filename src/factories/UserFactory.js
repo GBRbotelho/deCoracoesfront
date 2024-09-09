@@ -1,4 +1,4 @@
-export const UserFacotory = {
+export const UserFactory = {
   baseUrl: "https://decoracoesapi.vercel.app",
 
   authenticate: async function (data) {
