@@ -4,6 +4,7 @@ import Hamburger from "../../../components/Navbar/Hamburger";
 import Close from "../../../components/Navbar/Close";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContext";
+import { useMenu } from "../../../contexts/MenuContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar({ setModalLogin }) {
@@ -11,6 +12,7 @@ export default function Navbar({ setModalLogin }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { token, logout, user } = useAuth();
+  const { onMenu } = useMenu();
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -96,8 +98,11 @@ export default function Navbar({ setModalLogin }) {
                     Dashboard
                   </li>
                 )}
-                <li className="cursor-pointer px-10 hover:bg-slate-200">
-                  Pedidos
+                <li
+                  className="cursor-pointer px-10 hover:bg-slate-200"
+                  onClick={() => onMenu()}
+                >
+                  Assinaturas
                 </li>
                 <li className="cursor-pointer px-10 hover:bg-slate-200">
                   Configurações
@@ -210,8 +215,14 @@ export default function Navbar({ setModalLogin }) {
                         Dashboard
                       </li>
                     )}
-                    <li className="cursor-pointer px-10 hover:bg-slate-200">
-                      Pedidos
+                    <li
+                      className="cursor-pointer px-10 hover:bg-slate-200"
+                      onClick={() => {
+                        onMenu();
+                        isHovered(false);
+                      }}
+                    >
+                      Assinaturas
                     </li>
                     <li className="cursor-pointer px-10 hover:bg-slate-200">
                       Configurações

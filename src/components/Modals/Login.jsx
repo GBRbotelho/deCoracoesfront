@@ -7,7 +7,7 @@ function Login(props) {
   const [modal, setModal] = useState(true);
 
   return (
-    <div className="fixed bg-black bg-opacity-30 top-0 left-0 w-screen h-screen flex items-center justify-center">
+    <div className="fixed z-[100000] bg-black bg-opacity-30 top-0 left-0 w-screen h-screen flex items-center justify-center">
       <div
         className="rounded-lg bg-white border bg-card text-card-foreground shadow-sm w-full mx-auto max-w-[400px]"
         data-v0-t="card"
