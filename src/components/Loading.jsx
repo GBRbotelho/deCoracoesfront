@@ -11,7 +11,7 @@ function Loading() {
   let [color, setColor] = useState("#aaaaaa");
 
   return (
-    <div className="fixed bg-black bg-opacity-30 top-0 left-0 w-screen h-screen flex items-center justify-center z-[1000]">
+    <div className="fixed bg-black bg-opacity-30 top-0 left-0 w-screen h-screen flex items-center justify-center z-[100000000000]">
       <div className="sweet-loading">
         <RingLoader
           color={color}
