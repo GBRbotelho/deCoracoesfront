@@ -14,6 +14,7 @@ import Plus from "../../../components/Icons/Plus";
 import Address from "../../../components/Modals/Address";
 import { AddressFactory } from "../../../factories/AddressFactory";
 import { useFlashMessage } from "../../../contexts/FlashMessageContext";
+import DeleteModal from "../../../components/Modals/DeleteModal";
 
 export default function Section2({ box }) {
   const wizardRef = useRef(null);
@@ -22,6 +23,9 @@ export default function Section2({ box }) {
   const [modalAddress, setModalAddress] = useState(false);
   const [address, setAddress] = useState([]);
   const [addressSelected, setAddressSelected] = useState(null);
+  const [editAdress, setEditAdress] = useState(null);
+  const [mouseEnter, setMouseEnter] = useState(null);
+  const [deleteAddress, setDeleteAddress] = useState(null);
   const { showMessage } = useFlashMessage();
   const [cont, setCont] = useState(0);
 
@@ -109,7 +113,11 @@ export default function Section2({ box }) {
                         : setAddressSelected(item.id);
                     }}
                   >
-                    <div className="p-3 flex-1">
+                    <div
+                      className="p-3 flex-1 relative"
+                      onMouseEnter={() => setMouseEnter(item.id)}
+                      onMouseLeave={() => setMouseEnter(null)}
+                    >
                       <div className="grid grid-cols-3 gap-1">
                         <div className="text-right font-medium">Endereço:</div>
                         <div className="col-span-2">
@@ -118,6 +126,24 @@ export default function Section2({ box }) {
                         <div className="text-right font-medium">Cidade:</div>
                         <div className="col-span-2">
                           {item.city}-{item.state}
+                        </div>
+                      </div>
+                      <div className={`absolute top-6 right-3 flex gap-3`}>
+                        <div
+                          className={`w-7 h-7 ${
+                            mouseEnter === item.id ? "block" : "hidden"
+                          }`}
+                          onClick={() => setEditAdress(item)}
+                        >
+                          <Pencil />
+                        </div>
+                        <div
+                          className={`w-7 h-7 ${
+                            mouseEnter === item.id ? "block" : "hidden"
+                          }`}
+                          onClick={() => setDeleteAddress(item)}
+                        >
+                          <Delet />
                         </div>
                       </div>
                     </div>
@@ -204,6 +230,45 @@ export default function Section2({ box }) {
       {modalAddress && (
         <Address setState={setModalAddress} fetch={fetchAddress} />
       )}
+      {editAdress && (
+        <Address
+          data={editAdress}
+          setState={setEditAdress}
+          fetch={fetchAddress}
+        />
+      )}
+      {deleteAddress && (
+        <DeleteModal
+          handleDelete={async () => {
+            console.log("Passou");
+            await AddressFactory.delete(deleteAddress);
+            await fetchAddress();
+          }}
+          setState={setDeleteAddress}
+        />
+      )}
     </section>
   );
 }
+
+const Pencil = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="transition duration-200 hover:scale-110 hover:text-red-600"
+  >
+    <path d="M12.8995 6.85453L17.1421 11.0972L7.24264 20.9967H3V16.754L12.8995 6.85453ZM14.3137 5.44032L16.435 3.319C16.8256 2.92848 17.4587 2.92848 17.8492 3.319L20.6777 6.14743C21.0682 6.53795 21.0682 7.17112 20.6777 7.56164L18.5563 9.68296L14.3137 5.44032Z"></path>
+  </svg>
+);
+
+const Delet = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="transition duration-200 hover:scale-110 hover:text-red-600"
+  >
+    <path d="M17 4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7V2H17V4ZM9 9V17H11V9H9ZM13 9V17H15V9H13Z"></path>
+  </svg>
+);

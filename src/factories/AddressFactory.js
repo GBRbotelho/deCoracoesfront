@@ -19,6 +19,42 @@ export const AddressFactory = {
     }
   },
 
+  update: async function (data) {
+    try {
+      const response = await fetch(`${this.baseUrl}/address`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("Erro ao atualizar:", error);
+      throw error;
+    }
+  },
+
+  delete: async function (data) {
+    try {
+      const response = await fetch(`${this.baseUrl}/address`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("Erro ao deletar:", error);
+      throw error;
+    }
+  },
+
   findAll: async function (data) {
     try {
       const response = await fetch(`${this.baseUrl}/address/search`, {

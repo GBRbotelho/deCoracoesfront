@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { AddressFactory } from "../../factories/AddressFactory";
+import { useLoading } from "../../contexts/LoadingContext";
 
 function Address(props) {
   const { user } = useAuth();
+  const { onLoading, offLoading } = useLoading();
   const [address, setAddress] = useState({
+    id: "",
     street: "",
     district: "",
     number: "",
@@ -15,6 +18,12 @@ function Address(props) {
     userId: null,
   });
 
+  useEffect(() => {
+    if (props.data) {
+      setAddress(props.data);
+    }
+  }, []);
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setAddress({ ...address, [id]: value });
@@ -22,14 +31,29 @@ function Address(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await AddressFactory.create({
-      ...address,
-      userId: user.id,
-    });
-
-    if (response.success) {
-      await props.fetch();
-      props.setState(false);
+    onLoading();
+    if (props.data) {
+      const response = await AddressFactory.update({
+        ...address,
+        userId: user.id,
+      });
+      if (response.success) {
+        await props.fetch();
+        offLoading();
+        props.setState(false);
+      }
+      offLoading();
+    } else {
+      const response = await AddressFactory.create({
+        ...address,
+        userId: user.id,
+      });
+      if (response.success) {
+        await props.fetch();
+        offLoading();
+        props.setState(false);
+      }
+      offLoading();
     }
   };
 
