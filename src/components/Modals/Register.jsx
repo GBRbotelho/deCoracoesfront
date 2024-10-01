@@ -61,6 +61,10 @@ function Register({ props, modal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (user.password !== confirmPassowrd) {
+      toast.error("A senha e confirmação de senha devem ser iguais.");
+      return null;
+    }
     onLoading();
     const response = await UserFactory.create(user);
     if (response.success) {
