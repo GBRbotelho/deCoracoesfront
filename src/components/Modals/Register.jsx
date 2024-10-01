@@ -4,6 +4,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useLoading } from "../../contexts/LoadingContext";
 import StepWizard from "react-step-wizard";
 import { toast } from "react-toastify";
+import { maskCpf, maskLetter, maskPhone } from "../../utils/masks";
 
 function Register({ props, modal }) {
   const wizardRef = useRef(null);
@@ -18,9 +19,32 @@ function Register({ props, modal }) {
   });
   const [confirmPassowrd, setConfirmPassowrd] = useState("");
   const { saveToken } = useAuth();
+
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setUser({ ...user, [id]: value });
+
+    let newValue = value;
+
+    // Aplica a máscara apropriada com base no campo
+    switch (id) {
+      case "phone":
+        newValue = maskPhone(value);
+        break;
+      case "cpf":
+        newValue = maskCpf(value);
+        break;
+      case "name":
+        newValue = maskLetter(value);
+        break;
+      case "surname":
+        newValue = maskLetter(value);
+        break;
+      default:
+        newValue = value;
+    }
+
+    // Atualiza o estado com o valor mascarado
+    setUser({ ...user, [id]: newValue });
   };
 
   const handleNextStep = () => {
@@ -149,6 +173,7 @@ function Register({ props, modal }) {
                   type="text"
                   value={user.phone}
                   onChange={handleChange}
+                  maxLength={15}
                 />
               </div>
               <div className="space-y-2">
@@ -166,6 +191,7 @@ function Register({ props, modal }) {
                   type="text"
                   value={user.cpf}
                   onChange={handleChange}
+                  maxLength={14}
                 />
               </div>
 

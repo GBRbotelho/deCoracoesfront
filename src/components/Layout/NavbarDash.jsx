@@ -49,17 +49,26 @@ function Navbar() {
         <li>
           <p className="text-gray-400">Olá, {user && user.name}</p>
         </li>
-        <li className="dropdown ml-3">
+        <Link
+          to={"/"}
+          className="cursor-pointer flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-emerald-500 hover:bg-gray-50"
+        >
+          <button className="bg-red-600 px-5 py-2 rounded text-[15px] font-[600] text-white transition duration-200 hover:bg-opacity-40 hover:text-red-600 hover:scale-110">
+            {" "}
+            Sair
+          </button>
+        </Link>
+        {/* <li className="dropdown ml-3">
           <button
             type="button"
             className="dropdown-toggle flex items-center"
             onClick={() => setActiveProfile(!activeProfile)}
           >
             O
-            {/* <img
+            <img
               alt=""
               className="w-8 h-8 rounded-full block object-cover align-middle"
-            /> */}
+            />
           </button>
           <ul
             className={`dropdown-menu shadow-md shadow-black/5 z-30 absolute py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px] right-6 ${
@@ -83,7 +92,7 @@ function Navbar() {
               </a>
             </li>
           </ul>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

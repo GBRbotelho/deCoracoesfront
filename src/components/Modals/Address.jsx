@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { AddressFactory } from "../../factories/AddressFactory";
 import { useLoading } from "../../contexts/LoadingContext";
+import { maskCep } from "../../utils/masks";
+import { toast } from "react-toastify";
 
 function Address(props) {
   const { user } = useAuth();
@@ -26,11 +28,32 @@ function Address(props) {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setAddress({ ...address, [id]: value });
+
+    let newValue = value;
+
+    if (id === "cep") {
+      newValue = maskCep(value);
+    }
+
+    setAddress({ ...address, [id]: newValue });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      !address.cep ||
+      !address.number ||
+      !address.city ||
+      !address.district ||
+      !address.state ||
+      !address.street
+    ) {
+      toast.error(
+        "Preencha todos os campos obrigatorios(Rua, Numero, Bairro, Cidade, Estado, CEP)"
+      );
+      return null;
+    }
+
     onLoading();
     if (props.data) {
       const response = await AddressFactory.update({
@@ -44,6 +67,7 @@ function Address(props) {
       }
       offLoading();
     } else {
+      console.log("Passou");
       const response = await AddressFactory.create({
         ...address,
         userId: user.id,
@@ -152,6 +176,7 @@ function Address(props) {
                 onChange={handleChange}
                 value={address.cep}
                 placeholder="Entre com o cep"
+                maxLength={9}
               />
             </div>
           </div>
