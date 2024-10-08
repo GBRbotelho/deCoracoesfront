@@ -83,7 +83,7 @@ export default function Navbar({ setModalLogin }) {
               </svg>
             </button>
             <div
-              className={`absolute transform transition-all duration-300 ${
+              className={`absolute transform transition-all text-[20px] duration-300 ${
                 isHovered
                   ? "opacity-100 -translate-x-full"
                   : "opacity-0 translate-x-0"
@@ -92,23 +92,20 @@ export default function Navbar({ setModalLogin }) {
               <ul className="m-2">
                 {user.level > 0 && (
                   <li
-                    className="cursor-pointer px-10 hover:bg-slate-200"
+                    className="cursor-pointer px-14 py-2 hover:bg-slate-200"
                     onClick={() => navigate("/dashboard")}
                   >
                     Dashboard
                   </li>
                 )}
                 <li
-                  className="cursor-pointer px-10 hover:bg-slate-200"
+                  className="cursor-pointer px-14 py-2 hover:bg-slate-200"
                   onClick={() => onMenu()}
                 >
                   Assinaturas
                 </li>
-                <li className="cursor-pointer px-10 hover:bg-slate-200">
-                  Configurações
-                </li>
                 <li
-                  className="cursor-pointer px-10 hover:bg-slate-200 flex gap-2 items-center"
+                  className="cursor-pointer px-14 py-2 hover:bg-slate-200 flex gap-2 items-center"
                   onClick={logout}
                 >
                   Sair
@@ -223,9 +220,6 @@ export default function Navbar({ setModalLogin }) {
                       }}
                     >
                       Assinaturas
-                    </li>
-                    <li className="cursor-pointer px-10 hover:bg-slate-200">
-                      Configurações
                     </li>
                     <li
                       className="cursor-pointer px-10 hover:bg-slate-200 flex gap-2 items-center"
