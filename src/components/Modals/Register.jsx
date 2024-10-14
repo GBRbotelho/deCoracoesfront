@@ -16,8 +16,8 @@ function Register({ props, modal }) {
     cpf: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
-  const [confirmPassowrd, setConfirmPassowrd] = useState("");
   const { saveToken } = useAuth();
 
   const handleChange = (e) => {
@@ -61,7 +61,7 @@ function Register({ props, modal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (user.password !== confirmPassowrd) {
+    if (user.password !== user.confirmPassword) {
       toast.error("A senha e confirmação de senha devem ser iguais.");
       return null;
     }
@@ -246,7 +246,7 @@ function Register({ props, modal }) {
                   id="password"
                   placeholder="Entre com sua Senha"
                   required=""
-                  type="text"
+                  type="password"
                   value={user.password}
                   onChange={handleChange}
                 />
@@ -263,9 +263,9 @@ function Register({ props, modal }) {
                   id="confirmPassword"
                   placeholder="Confirme sua senha"
                   required=""
-                  type="text"
-                  value={user.confirmPassowrd}
-                  onChange={(e) => setConfirmPassowrd(e.value)}
+                  type="password"
+                  value={user.confirmPassword}
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex gap-3 my-3">
