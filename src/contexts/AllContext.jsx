@@ -47,7 +47,7 @@ const AllContextsProvider = ({ children }) => {
         <FlashMessageProvider>
           <MenuProvider>
             {children}
-            <Modal
+            {/* <Modal
               isOpen={modalIsOpen}
               onRequestClose={() => setIsOpen(false)}
               style={customStyles}
@@ -81,7 +81,7 @@ const AllContextsProvider = ({ children }) => {
                   </div>
                 </div>
               </div>
-            </Modal>
+            </Modal> */}
           </MenuProvider>
         </FlashMessageProvider>
       </LoadingProvider>
